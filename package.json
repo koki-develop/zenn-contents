@@ -1,5 +1,8 @@
 {
   "name": "zenn-contents",
+  "scripts": {
+    "check:unused-images": "bun run ./tasks/check-unused-images.ts"
+  },
   "dependencies": {
     "zenn-cli": "0.1.158"
   },
