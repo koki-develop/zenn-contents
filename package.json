@@ -1,0 +1,9 @@
+{
+  "name": "zenn-contents",
+  "dependencies": {
+    "zenn-cli": "0.1.158"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.5"
+  }
+}
