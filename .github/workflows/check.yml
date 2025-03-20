@@ -9,6 +9,29 @@ on:
       - main
 
 jobs:
+  textlint:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      - name: textlint
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
+        run: |
+          bun run check:textlint --format checkstyle \
+            | reviewdog \
+                -name=textlint \
+                -reporter=github-pr-review \
+                -f=checkstyle \
+                -fail-level=any \
+                -filter-mode=file
+
   unused-images:
     timeout-minutes: 10
     runs-on: ubuntu-latest
