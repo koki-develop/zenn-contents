@@ -1,6 +1,7 @@
 {
   "name": "zenn-contents",
   "scripts": {
+    "check:textlint": "textlint ./articles",
     "check:unused-images": "bun run ./tasks/check-unused-images.ts"
   },
   "dependencies": {
