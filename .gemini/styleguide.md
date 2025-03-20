@@ -1,3 +1,1 @@
-# Code Review Style Guide
-
-All code reviews must be conducted in Japanese.
+常に日本語を使用してください。
