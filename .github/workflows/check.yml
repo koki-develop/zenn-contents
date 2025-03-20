@@ -4,9 +4,15 @@ permissions: {}
 
 on:
   pull_request:
+    paths:
+      - "articles/**"
+      - ".github/workflows/check.yml"
   push:
     branches:
       - main
+    paths:
+      - "articles/**"
+      - ".github/workflows/check.yml"
 
 jobs:
   textlint:
