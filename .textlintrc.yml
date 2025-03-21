@@ -1,0 +1,6 @@
+plugins: {}
+filters: {}
+rules:
+  preset-ja-technical-writing: true
+  no-todo: true
+  aws-service-name: true
