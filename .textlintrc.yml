@@ -1,6 +1,9 @@
 plugins: {}
 filters: {}
 rules:
+  # https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
   preset-ja-technical-writing: true
+  # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
+  # https://github.com/bun913/textlint-rule-aws-service-name
   aws-service-name: true
