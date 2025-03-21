@@ -18,6 +18,12 @@ rules:
         dict2:
           allows:
             - "/^することもできます$/"
+    # https://github.com/textlint-ja/textlint-rule-no-exclamation-question-mark
+    no-exclamation-question-mark: false
+    # https://github.com/textlint-ja/textlint-rule-ja-no-successive-word
+    ja-no-successive-word:
+      allow:
+        - "！"
   # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
   # https://github.com/bun913/textlint-rule-aws-service-name
