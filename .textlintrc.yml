@@ -2,7 +2,11 @@ plugins: {}
 filters: {}
 rules:
   # https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
-  preset-ja-technical-writing: true
+  preset-ja-technical-writing:
+    # https://github.com/textlint-ja/textlint-rule-ja-no-mixed-period
+    ja-no-mixed-period:
+      allowPeriodMarks:
+        - "、"
   # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
   # https://github.com/bun913/textlint-rule-aws-service-name
