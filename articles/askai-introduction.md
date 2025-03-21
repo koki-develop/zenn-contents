@@ -25,7 +25,7 @@ https://github.com/koki-develop/askai
 
 # インストール
 
-Homebrew を使用している場合は次のコマンドでインストールすることができます。
+Homebrew を使用している場合は次のコマンドでインストールできます。
 
 ```sh
 $ brew install koki-develop/tap/askai
@@ -42,7 +42,7 @@ $ go install github.com/koki-develop/askai@latest
 ## 1. OpenAI API の API Key を発行する
 
 askai では内部的に OpenAI API を使用しています。
-OpenAI API にリクエストするために必要な API Key を発行します。
+OpenAI API へリクエストするために必要な API Key を発行します。
 
 :::message
 
@@ -76,8 +76,15 @@ $ askai --configure
 入力する項目は次の通りです。
 
 - OpenAI API Key: 「[1. OpenAI API Key を発行する](#1.-openai-api-の-api-key-を発行する)」手順で発行した API Key 。
-- Model: 使用するモデル名。
-    - 有効な値: `gpt-4`, `gpt-4-0613`, `gpt-4-32k`, `gpt-4-32k-0613`, `gpt-3.5-turbo`, `gpt-3.5-turbo-0613`, `gpt-3.5-turbo-16k`, `gpt-3.5-turbo-16k-0613`
+- Model: 使用するモデル名。有効な値は次の通り。
+    - `gpt-4`
+    - `gpt-4-0613`
+    - `gpt-4-32k`
+    - `gpt-4-32k-0613`
+    - `gpt-3.5-turbo`
+    - `gpt-3.5-turbo-0613`
+    - `gpt-3.5-turbo-16k`
+    - `gpt-3.5-turbo-16k-0613`
 
 設定が完了するとカレントディレクトリに `.askai` という名前で設定ファイルが作成されます。
 
@@ -121,7 +128,7 @@ $ askai 'Please write a program in Go that outputs "Hello world”.'
 
 ## 対話形式で質問をする
 
-`-i` もしくは `--interactive` フラグを指定することで対話形式で質問をすることもできます。
+`-i` もしくは `--interactive` フラグを指定すると対話形式で質問をすることもできます。
 もちろん複数行にも対応しており、 `Ctrl` + `d` でメッセージを送信します。
 
 ```sh
