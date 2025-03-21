@@ -8,6 +8,11 @@ rules:
     ja-no-mixed-period:
       allowPeriodMarks:
         - "、"
+    ja-no-redundant-expression:
+      dictOptions:
+        dict2:
+          allows:
+            - "/^することもできます$/"
   # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
   # https://github.com/bun913/textlint-rule-aws-service-name
