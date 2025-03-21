@@ -1,4 +1,5 @@
 name: Check
+run-name: Check (${{ github.ref_name }})
 
 permissions: {}
 
