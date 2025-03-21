@@ -8,6 +8,8 @@ rules:
     ja-no-mixed-period:
       allowPeriodMarks:
         - "、"
+        - ":::"
+        - "::::"
     ja-no-redundant-expression:
       dictOptions:
         dict2:
