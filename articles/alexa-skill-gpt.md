@@ -26,9 +26,17 @@ https://developer.amazon.com/ja-JP/alexa/alexa-skills-kit/get-deeper/tutorials-c
 
 # 開発関連の話
 
+<!-- textlint-disable aws-service-name -->
+
 ## Alexa Skills Kit Command Line interface (ask-cli)
 
+<!-- textlint-enable aws-service-name -->
+
+<!-- textlint-disable aws-service-name -->
+
 プロジェクトの初期化やスキルの作成については Alexa Skills Kit Command Line interface (ask-cli) を使っています。
+
+<!-- textlint-enable aws-service-name -->
 
 https://github.com/alexa/ask-cli
 
@@ -76,7 +84,7 @@ https://developer.amazon.com/ja-JP/docs/alexa/smapi/ask-cli-intro.html
 https://developer.amazon.com/ja-JP/docs/alexa/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html
 
 Alexa-hosted スキルを使用すると開発者に代わって Alexa がコードとリソースを AWS に保存します。
-自分でインフラ環境を準備する必要が無いので、スキルを素早くデプロイすることができるというメリットがあります。利用制限はあるものの、お金もかかりません。
+自分でインフラ環境を準備する必要が無いので、スキルを素早くデプロイできるというメリットがあります。利用制限はあるものの、お金もかかりません。
 また、必要に応じて後から自分の AWS アカウントに切り替えることも可能です。
 
 https://developer.amazon.com/ja-JP/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html
@@ -88,7 +96,7 @@ https://developer.amazon.com/ja-JP/docs/alexa/hosted-skills/alexa-hosted-skills-
 
 https://www.npmjs.com/package/openai
 
-[`openai`](https://www.npmjs.com/package/openai) パッケージを使うとこんな感じで簡単に Chat Completions API を実行することができます。便利。
+[`openai`](https://www.npmjs.com/package/openai) パッケージを使うとこんな感じで簡単に Chat Completions API を実行できます。便利。
 
 ```js
 const { OpenAI } = require("openai");
@@ -108,11 +116,11 @@ GPT-4 は GPT-3.5-Turbo と比べるとレスポンスがやや遅く、 Alexa �
 
 ## OpenAI API キーの管理
 
-ホスティングに Alexa-hosted スキルを使用している場合は自分で環境変数を設定することはできません。
+ホスティングに Alexa-hosted スキルを使用している場合、自分では環境変数を設定できません。
 幸い DynamoDB が使えるので、
 
 1. コンソールから**手作業**で DynamoDB に OpenAI の API キーを保存
-2. 実装側で必要なタイミングで DynamoDB から API キーを取得する
+2. 必要なタイミングで実装側にて DynamoDB から API キーを取得する
 
 という方法を取りました。
 
