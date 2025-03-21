@@ -146,7 +146,8 @@ WFk9fslhg3lATGoC
 | ユーザー名 | `admin` |
 | パスワード | 先程取得した初期パスワード<br/>( 今回の場合は `WFk9fslhg3lATGoC` ) |
 
-`argocd login {Argo CD API サーバー}` を実行すると対話形式でユーザー名とパスワードを聞かれます ( `--username`, `--password` フラグに値を直接指定して実行することもできます ) 。
+`argocd login {Argo CD API サーバー}` を実行すると対話形式でユーザー名とパスワードを聞かれます。
+( もしくは `--username`, `--password` フラグに値を直接指定して実行することもできます )
 
 ```
 $ argocd login localhost:8080
@@ -159,7 +160,8 @@ Context 'localhost:8080' updated
 ## admin ユーザーのパスワードを変更
 
 admin ユーザーを初期パスワードのまま運用するのはあまりよろしくないので、パスワードを変更しておきます。
-`argocd account update-password` を実行すると対話形式でパスワードを変更できます ( `--current-password`, `--new-password` フラグに値を直接指定して実行することもできます ) 。
+`argocd account update-password` を実行すると対話形式でパスワードを変更できます。
+( もしくは `--current-password`, `--new-password` フラグに値を直接指定して実行することもできます )
 
 ```
 $ argocd account update-password
