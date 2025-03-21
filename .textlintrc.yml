@@ -12,6 +12,9 @@ rules:
         - "::::"
     ja-no-redundant-expression:
       dictOptions:
+        dict1:
+          allows:
+            - "/^することも可能です$/"
         dict2:
           allows:
             - "/^することもできます$/"
