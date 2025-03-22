@@ -2,6 +2,10 @@ plugins: {}
 filters:
   # https://github.com/textlint/textlint-filter-rule-comments
   comments: true
+  # https://github.com/textlint/textlint-filter-rule-allowlist
+  allowlist:
+    allow:
+      - "/^:::details .+$/m"
 rules:
   # https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
   preset-ja-technical-writing:
