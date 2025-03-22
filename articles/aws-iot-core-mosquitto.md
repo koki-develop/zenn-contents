@@ -17,7 +17,7 @@ https://mosquitto.org/
 Publish/Subscribe を行うデバイスに Mosquitto をインストールします。
 今回は Mac を使用します。
 
-Homebrew を使用している場合は次のコマンドでインストールすることができます。
+Homebrew を使用している場合は次のコマンドでインストールできます。
 
 ```sh
 $ brew install mosquitto
@@ -112,7 +112,7 @@ AWS IoT Core のマネジメントコンソールで左メニューから `セ�
 :::message
 
 実際は用途に合わせて最小限の権限を設定することを推奨します。
-以下のドキュメントに用途に合わせたポリシーの設定例が記載されているため、詳しくはこちらをご参照ください。
+以下のドキュメントで用途に合わせたポリシーの設定例が記載されているため、詳しくはこちらをご参照ください。
 
 - [パブリッシュ/サブスクライブポリシーの例 - AWS IoT Core](https://docs.aws.amazon.com/ja_jp/iot/latest/developerguide/pub-sub-policy.html)
 
@@ -143,7 +143,7 @@ AWS IoT Core のマネジメントコンソールで左メニューから `セ�
 ## エンドポイントを確認
 
 AWS IoT Core のデバイスデータエンドポイントを確認しておきます。
-左メニューの `設定` からエンドポイントを確認することができます。
+左メニューの `設定` からエンドポイントを確認できます。
 こちらの値は後で必要になるため控えておきます。
 
 ![](/images/aws-iot-core-mosquitto/get-endpoint.png)
