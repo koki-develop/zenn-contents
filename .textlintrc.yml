@@ -1,5 +1,6 @@
 plugins: {}
 filters:
+  # https://github.com/textlint/textlint-filter-rule-comments
   comments: true
 rules:
   # https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
@@ -8,8 +9,6 @@ rules:
     ja-no-mixed-period:
       allowPeriodMarks:
         - "、"
-        - ":::"
-        - "::::"
     ja-no-redundant-expression:
       dictOptions:
         dict1:
