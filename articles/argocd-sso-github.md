@@ -84,7 +84,9 @@ $ kubectl -n argocd edit configmap argocd-cm
 
 `data:` に以下のような設定を追加します。
 :::message
+
 `dex.config` は文字列であることに注意してください。
+
 :::
 
 ```yaml

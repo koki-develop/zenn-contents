@@ -17,7 +17,9 @@ https://aws.amazon.com/jp/about-aws/whats-new/2022/10/amazon-cognito-console-use
 ## Terraform から設定する場合
 
 :::message
+
 AWS Provider のバージョンが [4.38.0](https://registry.terraform.io/providers/hashicorp/aws/4.38.0) 以上である必要があります。
+
 :::
 
 [`aws_cognito_user_pool`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool) Resource の [`deletion_protection`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool#deletion_protection) Argument を `ACTIVE` に設定することで削除保護を有効にできます。
