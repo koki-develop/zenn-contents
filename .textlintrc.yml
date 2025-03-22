@@ -6,6 +6,7 @@ filters:
   allowlist:
     allow:
       - "/^:::details .+$/m"
+      - "/^:::message$/m"
 rules:
   # https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
   preset-ja-technical-writing:
