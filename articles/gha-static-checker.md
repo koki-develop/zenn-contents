@@ -569,7 +569,7 @@ $ zizmor --persona=auditor .
 ### オンラインモードで実行する
 
 一部のチェック項目は内部的に GitHub API を使用する必要があり、それらはデフォルトでは無効になっています ( offline モード) 。
-これらのチェック項目を有効にする ( online モード) には GitHub Token を指定する必要があります。
+これらのチェック項目を有効にする ( online モード) には GitHub Token を渡す必要があります。
 
 ```bash
 $ zizmor --gh-token="<GITHUB_TOKEN>" .
