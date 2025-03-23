@@ -238,7 +238,7 @@ Homebrew でインストールできます。
 $ brew install suzuki-shunsuke/ghalint/ghalint
 ```
 
-その他のインストール方法についてはドキュメントをご参照ください。
+その他のインストール方法については公式ドキュメントをご参照ください。
 
 https://github.com/suzuki-shunsuke/ghalint/blob/main/docs/install.md#
 
@@ -378,7 +378,7 @@ Homebrew でインストールできます。
 $ brew install zizmor
 ```
 
-その他のインストール方法についてはドキュメントをご参照ください。
+その他のインストール方法については公式ドキュメントをご参照ください。
 
 https://woodruffw.github.io/zizmor/installation/
 
