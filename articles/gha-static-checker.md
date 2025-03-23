@@ -226,7 +226,7 @@ https://github.com/suzuki-shunsuke/ghalint/tree/main?tab=readme-ov-file#policies
 主にセキュリティ系のチェックが充実しており、例として次のようなものがあります。
 
 - job の permissions 指定の必須化
-- Action のコミットハッシュによる参照の必須化
+- コミットハッシュによるアクション参照の必須化
 - `actions/checkout` アクションへの `persist-credentials: false` の設定の必須化
 - etc.
 
