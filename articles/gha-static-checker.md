@@ -1,9 +1,10 @@
 ---
-title: "GitHub Actions を静的チェックする (actionlint/ghalint/zizmor)"
+title: "GitHub Actions を静的検査するツールの紹介 (actionlint/ghalint/zizmor)"
 emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions"]
-published: false
+published: true
+published_at: 2025-03-24 18:00
 ---
 
 先日、 tj-actions/changed-files や reviewdog/action-* などのアクションの Git タグが書き換えられるという出来事がありました。
@@ -35,9 +36,27 @@ Git タグ → コミットハッシュへの書き換えは pinact が便利で
 しかし、 GitHub Action ではアクションのコミットハッシュ指定以外にも考慮すべき事項がたくさんあります。
 それらを人力で全てチェックするのには限界があるため、以下のような静的検査ツールを利用して自動化することが重要です。
 
+- [検証環境](#検証環境)
 - [actionlint - Static checker for GitHub Actions workflow files](#actionlint---static-checker-for-github-actions-workflow-files)
+  - [チェックできる項目](#チェックできる項目)
+  - [インストール](#インストール)
+  - [基本的な使い方](#基本的な使い方)
+    - [明示的にファイルパスを指定する](#明示的にファイルパスを指定する)
+    - [出力形式をカスタマイズする](#出力形式をカスタマイズする)
 - [ghalint - GitHub Actions linter](#ghalint---github-actions-linter)
+  - [チェックできる項目](#チェックできる項目-1)
+  - [インストール](#インストール-1)
+  - [基本的な使い方](#基本的な使い方-1)
+    - [Workflow をチェックする (`ghalint run`)](#workflow-をチェックする-ghalint-run)
+    - [Action をチェックする (`ghalint run-action`)](#action-をチェックする-ghalint-run-action)
 - [zizmor - A static analysis tool for GitHub Actions](#zizmor---a-static-analysis-tool-for-github-actions)
+  - [チェックできる項目](#チェックできる項目-2)
+  - [インストール](#インストール-2)
+  - [基本的な使い方](#基本的な使い方-2)
+    - [分析の感度を調整する](#分析の感度を調整する)
+    - [オンラインモードで実行する](#オンラインモードで実行する)
+- [どれを使うべきなのか？](#どれを使うべきなのか)
+- [まとめ](#まとめ)
 
 この記事ではこれらのツールの基本的な使い方についてまとめます。
 
@@ -586,7 +605,7 @@ https://woodruffw.github.io/zizmor/usage/
 
 # どれを使うべきなのか？
 
-それぞれチェックする範囲が異なっている部分も多いので、個人的には全部併用するのが一番安心という気がしますね。
+それぞれチェックする範囲が異なっている部分も多く且つ競合もしないので、個人的には全部併用するのが一番安心という気がしますね。
 
 :::message
 
