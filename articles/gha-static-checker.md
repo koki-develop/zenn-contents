@@ -54,7 +54,7 @@ Git タグ → コミットハッシュへの書き換えは pinact が便利で
 
 https://github.com/rhysd/actionlint
 
-## チェックできる項目
+## actionlint でチェックできる項目
 
 actionlint でチェックできる項目の一覧は以下の公式ドキュメントに記載されています。
 
@@ -68,7 +68,7 @@ https://github.com/rhysd/actionlint/blob/v1.7.7/docs/checks.md#
 - pyflakes による Python スクリプトのチェック
 - etc.
 
-## インストール
+## actionlint のインストール
 
 Homebrew でインストールできます。
 
@@ -80,7 +80,7 @@ $ brew install actionlint
 
 https://github.com/rhysd/actionlint/blob/v1.7.7/docs/install.md#
 
-## 基本的な使い方
+## actionlint の基本的な使い方
 
 :::details $ actionlint --help
 
@@ -217,7 +217,7 @@ https://github.com/rhysd/actionlint/blob/v1.7.7/docs/usage.md#
 
 https://github.com/suzuki-shunsuke/ghalint
 
-## チェックできる項目
+## ghalint でチェックできる項目
 
 ghalint でチェックできる項目の一覧は以下の公式ドキュメントに記載されています。
 
@@ -230,7 +230,7 @@ https://github.com/suzuki-shunsuke/ghalint/tree/main?tab=readme-ov-file#policies
 - `actions/checkout` アクションへの `persist-credentials: false` の設定の必須化
 - etc.
 
-## インストール
+## ghalint のインストール
 
 Homebrew でインストールできます。
 
@@ -242,7 +242,7 @@ $ brew install suzuki-shunsuke/ghalint/ghalint
 
 https://github.com/suzuki-shunsuke/ghalint/blob/main/docs/install.md#
 
-## 基本的な使い方
+## ghalint の基本的な使い方
 
 :::details $ ghalint --help
 
@@ -357,7 +357,7 @@ https://github.com/suzuki-shunsuke/ghalint#how-to-use
 
 https://github.com/woodruffw/zizmor
 
-## チェックできる項目
+## zizmor でチェックできる項目
 
 zizmor でチェックできる項目の一覧は以下の公式ドキュメントに記載されています。
 
@@ -370,7 +370,7 @@ https://woodruffw.github.io/zizmor/audits/
 - テンプレート展開によるコードインジェクションの検出
 - etc.
 
-## インストール
+## zizmor のインストール
 
 Homebrew でインストールできます。
 
@@ -382,7 +382,7 @@ $ brew install zizmor
 
 https://woodruffw.github.io/zizmor/installation/
 
-## 基本的な使い方
+## zizmor の基本的な使い方
 
 :::details $ zizmor --help
 
