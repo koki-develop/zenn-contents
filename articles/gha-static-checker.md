@@ -327,8 +327,7 @@ OPTIONS:
 
 ```bash
 $ ghalint run-action
-# alias
-$ ghalint act
+$ ghalint act # alias
 ```
 
 ```:出力
@@ -587,12 +586,12 @@ https://woodruffw.github.io/zizmor/usage/
 
 # どれを使うべきなのか？
 
-それぞれチェックする範囲が異なっている部分も多く、且つ競合もしないので、個人的には全部併用するのが一番安心という気がしますね。
+それぞれチェックする項目が異なってるものも多く、且つ競合もしないので、個人的には全部併用するのが一番安心という気がしますね。
 
 :::message
 
-僕は個人リポジトリでは GitHub Actions 上でこれらのツールを実行するようにしています。
-( [koki-develop/github-actions-lint](https://github.com/koki-develop/github-actions-lint) は GitHub Actions で actionlint/ghalint/zizmor を使うための Action )
+僕は個人リポジトリでは GitHub Actions 上で actionlint/ghalint/zizmor を実行するようにしています。
+( [koki-develop/github-actions-lint](https://github.com/koki-develop/github-actions-lint) は GitHub Actions でこれらのツールを使うための Action )
 
 ```yaml:.github/workflows/github-actions-lint.yml
 # ...
