@@ -64,11 +64,13 @@ $ mise use ruby --pin
 ruby = "3.4.2"
 ```
 
-また、特定のツールのインストール可能なバージョンの一覧は以下のコマンドで確認できます。
+特定のツールのインストール可能なバージョンの一覧は以下のコマンドで確認できます。
 
 ```sh
 $ mise ls-remote <tool>
+```
 
+```sh
 # Ruby の例
 $ mise ls-remote ruby
 artichoke-dev
@@ -99,7 +101,7 @@ https://mise.jdx.dev/configuration.html#idiomatic-version-files
 
 ## ツールをグローバルにインストールする
 
-mise を使ってインストールしたツールは `mise.toml` ( もしくはその他バージョンファイル ) が存在しているディレクトリ配下でのみ有効です。
+通常、 mise を使ってインストールしたツールは `mise.toml` ( もしくはその他バージョンファイル ) が存在しているディレクトリ配下でのみ有効です。
 
 ```sh
 # deno をインストール
@@ -113,7 +115,7 @@ $ deno -v
 zsh: command not found: deno
 ```
 
-`mise use` に `--global` フラグを指定することで、ツールをグローバルにインストールできます。
+`--global` フラグを指定して `mise use` を実行することで、ツールをグローバルにインストールできます。
 
 ```sh
 # グローバルに deno をインストール
@@ -133,21 +135,14 @@ deno 2.2.9
 
 このパスは環境変数経由で変更できます。
 
-```sh
+```sh:~/.zshrc
 # 例
 export MISE_GLOBAL_CONFIG_FILE="~/dotfiles/mise.toml"
 ```
 
+詳しくは以下のドキュメントをご参照ください。
+
 https://mise.jdx.dev/configuration.html#mise-global-config-file
-
-:::message
-
-僕はこの設定ファイルを dotfiles で管理しています。
-これにより複数の端末で常にインストールしたいツールを一元的に管理できます。
-
-- [koki-develop/dotfiles/mise.toml](https://github.com/koki-develop/dotfiles/blob/main/mise.toml)
-
-:::
 
 # mise でインストール可能なツール
 
@@ -156,8 +151,6 @@ https://mise.jdx.dev/configuration.html#mise-global-config-file
 TODO: toc
 
 ## 組み込みでサポートされているもの
-
-https://mise.jdx.dev/core-tools.html
 
 mise 2025.4.2 時点で mise 本体の組み込みでサポートされているツールは以下です。
 
@@ -176,24 +169,23 @@ mise 2025.4.2 時点で mise 本体の組み込みでサポートされている
 | [Swift](https://mise.jdx.dev/lang/swift.html) (experimental) | `mise use swift` |
 | [Zig](https://mise.jdx.dev/lang/zig.html) | `mise use zig` |
 
-以下のコマンドで確認することもできます。
-
-```sh
-$ mise registry -b core
-```
+https://mise.jdx.dev/core-tools.html
 
 ## Backend
 
 https://mise.jdx.dev/dev-tools/backends/
 
 **Backend** とは、 mise がツールやプラグインをインストールするための仕組みです。
-mise では様々な Backend がサポートされており、これにより幅広いツールをインストールできるようになっています。
+mise では様々な Backend がサポートされており、これにより非常に幅広いツールをインストールできるようになっています。
 
-明示的に Backend を指定してツールをインストールする場合は以下のようにします。
+以下のように、明示的に Backend を指定してツールをインストールできます。
 
 ```sh
 $ mise use <backend>:<tool>
-# aqua から reviewdog をインストールする場合
+```
+
+```sh
+# aqua から reviewdog をインストールする例
 $ mise use aqua:reviewdog/reviewdog
 ```
 
