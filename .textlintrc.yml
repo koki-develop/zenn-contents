@@ -28,6 +28,11 @@ rules:
     ja-no-successive-word:
       allow:
         - "！"
+    # https://github.com/textlint-rule/textlint-rule-sentence-length
+    sentence-length:
+      max: 160
+      skipPatterns:
+        - "/\\s/"
   # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
   # https://github.com/bun913/textlint-rule-aws-service-name
