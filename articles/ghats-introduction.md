@@ -172,7 +172,9 @@ _参照するリモートアクションの補完_
 ![](/images/ghats-introduction/inputs-completion.png)
 _リモートアクションの inputs の型サポート_
 
-また、 `action` 関数を使っていればリモートアクションは自動的にコミット SHA で参照されるようになるため、明示的にバージョンを指定する必要はありません。
+---
+
+`action` 関数を使っていればリモートアクションは自動的にコミット SHA で参照されるようになるため、明示的にバージョンを指定する必要はありません。
 
 ```ts:.github/workflows/example.ts
 // ...
@@ -221,9 +223,13 @@ jobs:
 - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 ```
 
+:::message
+
 リモートアクションを Git タグを参照していたことにより GitHub Actions 上で悪意のあるコードが実行されてしまった事例も実際にあります。
 
-https://unit42.paloaltonetworks.com/github-actions-supply-chain-attack/
+- [GitHub Actions Supply Chain Attack: A Targeted Attack on Coinbase Expanded to the Widespread tj-actions/changed-files Incident: Threat Assessment (Updated 4/2)](https://unit42.paloaltonetworks.com/github-actions-supply-chain-attack/)
+
+:::
 
 とはいえ都度リモートアクションのコミット SHA を明示的に指定するのは非常に手間です。
 ghats を使えばそれらも自動的に面倒を見てくれますし、且つ参照するリモートアクションを `actions.json` で一元管理できるのでとても楽になります。
