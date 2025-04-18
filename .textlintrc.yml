@@ -33,6 +33,8 @@ rules:
       max: 160
       skipPatterns:
         - "/\\s/"
+    # https://github.com/textlint-ja/textlint-rule-ja-no-weak-phrase
+    ja-no-weak-phrase: false
   # https://github.com/textlint-rule/textlint-rule-no-todo
   no-todo: true
   # https://github.com/bun913/textlint-rule-aws-service-name
