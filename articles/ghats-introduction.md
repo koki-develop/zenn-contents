@@ -50,7 +50,7 @@ $ npm install -D ghats
 
 # 基本的な使い方
 
-ghats によるワークフロー定義は **`.github/workflows/*.ts`** に作成します。
+前提として、 ghats によるワークフロー定義は **`.github/workflows/*.ts`** に作成します。
 
 ```
 .github/
@@ -58,10 +58,11 @@ ghats によるワークフロー定義は **`.github/workflows/*.ts`** に作�
     └── example.ts
 ```
 
-ghats から `Workflow`, `Job` を import してワークフローを定義していきます。
+以下のワークフロー定義は `actions/checkout` を呼び出したあとに `echo` を実行する例です。
 この辺の書き方については GitHub Actions に慣れている人であれば細かい解説は不要だと思います。
 
 ```ts:.github/workflows/example.ts
+// ghats から Workflow, Job を import
 import { Workflow, Job } from "ghats";
 
 // workflow を定義
@@ -84,7 +85,7 @@ workflow.addJob(
 export default workflow;
 ```
 
-最後に `ghats build` コマンドを実行すると、 YAML 形式のワークフロー定義がビルドされます。
+ghats によるワークフロー定義を作成した後に `ghats build` コマンドを実行すると、 YAML 形式のワークフロー定義がビルドされます。
 
 ```sh
 $ npx ghats build
