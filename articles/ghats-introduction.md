@@ -3,7 +3,8 @@ title: "TypeScript で GitHub Actions ワークフロー定義を記述する「
 emoji: "🌱"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["typescript", "githubactions"]
-published: false
+published: true
+published_at: 2025-04-21 18:00
 ---
 
 こういうのを作りました。
