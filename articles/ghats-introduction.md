@@ -242,6 +242,10 @@ ghats を使えばそれらも自動的に面倒を見てくれますし、且�
 
 https://github.com/koki-develop/ghats#readme
 
+ちなみに ghats のリポジトリの GitHub Actions ワークフロー自体も ghats で記述されています。
+
+https://github.com/koki-develop/ghats/tree/main/.github/workflows
+
 # まとめ
 
 普通に YAML でよくないですか？
