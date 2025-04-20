@@ -7,8 +7,8 @@ published: true
 published_at: 2025-04-21 18:00
 ---
 
-こういうのを作りました。
-なぜなら人類は GitHub Actions ワークフロー定義を TypeScript で記述するべきなので。
+GitHub Actions ワークフロー定義を TypeScript で記述できるツールを作りました。
+なぜなら GitHub Actions ワークフロー定義は TypeScript で記述できた方がいいので。
 
 ```ts:.github/workflows/example.ts
 import { Workflow, Job } from "ghats";
