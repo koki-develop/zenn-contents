@@ -118,31 +118,6 @@ $ npx ghats install actions/checkout
 
 ![](/images/ghats-introduction/install.gif)
 
-インストールが完了すると `.github/workflows/` ディレクトリ内に `actions.json` と `actions-lock.json` が作成されます。
-
-```
-.github/
-└── workflows/
-    ├── actions.json
-    └── actions-lock.json
-```
-
-`actions.json` にはインストールしたリモートアクションのバージョンが記録され、 `actions-lock.json` にはそのコミット SHA が記録されます。
-
-```json:.github/workflows/actions.json
-{
-  "actions/checkout": "v4.2.2"
-}
-```
-
-```json:.github/workflows/actions-lock.json
-{
-  "actions": {
-    "actions/checkout@v4.2.2": "11bd71901bbe5b1630ceea73d27597364c9af683"
-  }
-}
-```
-
 リモートアクションをインストールすると `ghats` から `action` 関数が import できるようになります。この関数を使えばリモートアクションの型サポートを利用できます。
 
 ```diff ts:.github/workflows/example.ts
@@ -176,7 +151,32 @@ _リモートアクションの inputs の型サポート_
 
 ---
 
-ちなみに `action` 関数を使っていればリモートアクションは自動的にコミット SHA で参照されるようになるため、明示的にバージョンを指定する必要はありません。
+ちなみに、 `ghats install` コマンドが完了すると `.github/workflows/` ディレクトリ内に `actions.json` と `actions-lock.json` が作成されます。
+
+```
+.github/
+└── workflows/
+    ├── actions.json
+    └── actions-lock.json
+```
+
+`actions.json` にはインストールしたリモートアクションのバージョンが記録され、 `actions-lock.json` にはそのコミット SHA が記録されます。
+
+```json:.github/workflows/actions.json
+{
+  "actions/checkout": "v4.2.2"
+}
+```
+
+```json:.github/workflows/actions-lock.json
+{
+  "actions": {
+    "actions/checkout@v4.2.2": "11bd71901bbe5b1630ceea73d27597364c9af683"
+  }
+}
+```
+
+`action` 関数はこれらのファイルを利用して、リモートアクションの参照をコミット SHA で固定します。そのため、ワークフロー定義内ではリモートアクションのバージョンを明示的に指定する必要がありません。
 
 ```ts:.github/workflows/example.ts
 // ...
