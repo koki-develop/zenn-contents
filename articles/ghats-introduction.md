@@ -245,7 +245,3 @@ https://github.com/koki-develop/ghats#readme
 ちなみに ghats のリポジトリの GitHub Actions ワークフロー自体も ghats で記述されています。
 
 https://github.com/koki-develop/ghats/tree/main/.github/workflows
-
-# まとめ
-
-普通に YAML でよくないですか？
