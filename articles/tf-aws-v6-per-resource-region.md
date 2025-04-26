@@ -3,6 +3,7 @@ title: "【Terraform】AWS Provider v6 からはリソース単位でリージ�
 emoji: "🌏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "aws"]
+publication_name: "terraform_jp"
 published: false
 ---
 
