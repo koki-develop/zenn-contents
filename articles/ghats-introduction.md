@@ -210,7 +210,7 @@ jobs:
       # ...
 ```
 
-一般的に、 GitHub Actions でリモートアクションを参照する際は Git タグではなくコミット SHA を使用するのが推奨されています。
+一般的に、 GitHub Actions でリモートアクションを参照する際は Git タグではなくコミット SHA を使用することが推奨されています。
 
 > _リリースされたアクションバージョンのコミットSHAを使用するのが、安定性とセキュリティのうえで最も安全です。_
 > > [GitHub Actions のワークフロー構文 - GitHub Docs](https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsuses)
