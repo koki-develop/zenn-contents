@@ -33,14 +33,15 @@ provider "aws" {
 }
 
 # ap-northeast-1 にリソースを作成
-resource "aws_s3_bucket" "tokyo" {
-  bucket = "bucket-tokyo"
+resource "aws_cloudfront_distribution" "main" {
+  # ...
 }
 
 # us-east-1 にリソースを作成
-resource "aws_s3_bucket" "virginia" {
+resource "aws_acm_certificate" "main" {
   provider = aws.virginia # us-east-1 用の provider を指定
-  bucket   = "bucket-virginia"
+
+  # ...
 }
 ```
 
@@ -59,8 +60,8 @@ provider "aws" {
 resource "aws_s3_bucket" "main" {
   # これはエラーになる
   for_each = toset([aws, aws.virginia])
+  provider = each.value
 
-  provider      = each.value
   bucket_prefix = "bucket-"
 }
 ```
@@ -78,10 +79,10 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "main" {
-  for_each = toset(var.regions)
-
   # こういうこともできない
-  provider      = aws[each.key]
+  for_each = toset(var.regions)
+  provider = aws[each.key]
+
   bucket_prefix = "bucket-"
 }
 ```
@@ -90,7 +91,7 @@ resource "aws_s3_bucket" "main" {
 
 :::message
 
-ちなみに OpenTofu では v1.9 から provider に対して `for_each` が使用できるようになったそうです。
+ちなみに OpenTofu (Terraform の fork プロジェクト) では v1.9 から provider に対して `for_each` が使用できるようになったそうです。
 
 - [OpenTofu 1.9.0 is available now with provider for_each | OpenTofu](https://opentofu.org/blog/opentofu-1-9-0/)
 
@@ -113,15 +114,16 @@ resource "aws_s3_bucket" "main" {
 -}
 
  # ap-northeast-1 にリソースを作成
- resource "aws_s3_bucket" "tokyo" {
-   bucket = "bucket-tokyo"
+ resource "aws_cloudfront_distribution" "main" {
+   # ...
  }
 
  # us-east-1 にリソースを作成
- resource "aws_s3_bucket" "virginia" {
+ resource "aws_acm_certificate" "main" {
 -  provider = aws.virginia
 +  region = "us-east-1" # リソースレベルでリージョンを指定
-   bucket = "bucket-virginia"
+
+   # ...
  }
 ```
 
@@ -135,14 +137,14 @@ provider "aws" {
 resource "aws_s3_bucket" "main" {
   # 複数リージョンにまとめてリソースを作成
   for_each = toset(["ap-northeast-1", "ap-northeast-2", "us-east-1"])
+  region   = each.value
 
-  region = each.value # 最&高
   bucket = "bucket-${each.value}"
 }
 ```
 
 例えば全リージョンでの GuardDuty 一括有効化などのユースケースもかなり楽になりそうですね。
-う〜ん、良きですね〜。
+う〜ん、非常に良きです。
 
 # まとめ
 
