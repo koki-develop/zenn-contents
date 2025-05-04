@@ -1,4 +1,4 @@
 [tools]
-node = "22.14.0"
+node = "22.15.0"
 bun = "1.2.11"
 "go:github.com/reviewdog/reviewdog/cmd/reviewdog" = "0.20.3"
