@@ -172,12 +172,12 @@ provider "aws" {
 }
 
 data "aws_s3_bucket" "virginia" {
-  region = "us-east-1"
+  region = "us-east-1" # これ
   bucket = "virginia-bucket
 }
 
 ephemeral "aws_ssm_parameter" "virginia" {
-  region = "us-east-1"
+  region = "us-east-1" # これ
   arn    = "arn:aws:ssm:us-east-1:012345678910:parameter/virginia-parameter"
 }
 ```
