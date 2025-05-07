@@ -7,18 +7,35 @@ publication_name: "terraform_jp"
 published: false
 ---
 
-Terraform AWS Provider v6 の beta 版がリリースされています。
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 
-TODO: link
+Terraform AWS Provider v6 の beta 版がリリースされました！ 🎉 🎉
+
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
+
+https://github.com/hashicorp/terraform-provider-aws/releases/tag/v6.0.0-beta1
+
+```hcl
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.0.0-beta1"
+    }
+  }
+}
+```
 
 AWS Provider v6 の目玉はなんといっても**リソース単位のリージョン設定**です。
+
+- [Terraform AWS Provider Enhanced Region Support](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/enhanced-region-support)
 
 https://github.com/hashicorp/terraform-provider-aws/issues/41101
 https://github.com/hashicorp/terraform-provider-aws/issues/25308
 
-# Terraform で複数のリージョンを扱うのは面倒だった
+# 複数のリージョンを扱うのは面倒だった
 
-今までは Terraform で異なるリージョンにリソースを作成するためには、**リージョンごとに provider を定義**して、それぞれのリソースの `provider` 属性に明示的に指定する必要がありました。
+AWS Provider v5 以前では、異なるリージョンにリソースを作成するためには**リージョンごとに provider を定義**して、リソースの `provider` 属性に明示的に指定する必要がありました。
 
 ```hcl
 # ap-northeast-1 用の provider をデフォルトとして使う
@@ -45,7 +62,7 @@ resource "aws_acm_certificate" "main" {
 }
 ```
 
-また、 **provider に対しては `for_each` を使用できない**という制限もあり、複数リージョンにまとめてリソースを作成したいときも結構大変でした。
+また、 Terraform では **provider に対して `for_each` を使用できない**という制約もあり、複数リージョンにまとめてリソースを作成したいときも結構大変でした。
 
 ```hcl
 provider "aws" {
@@ -87,11 +104,11 @@ resource "aws_s3_bucket" "main" {
 }
 ```
 
-そんな感じで、 **Terraform で複数のリージョンを扱うのは結構面倒**でした。
+そんな感じで、 **AWS Provider で複数のリージョンを扱うのは結構面倒**でした。
 
 :::message
 
-ちなみに OpenTofu (Terraform の fork プロジェクト) では v1.9 から provider に対して `for_each` が使用できるようになったそうです。
+ちなみに OpenTofu ( Terraform の fork プロジェクト ) では v1.9 から provider に対して `for_each` が使用できるようになったそうです。
 
 - [OpenTofu 1.9.0 is available now with provider for_each | OpenTofu](https://opentofu.org/blog/opentofu-1-9-0/)
 
@@ -100,12 +117,11 @@ resource "aws_s3_bucket" "main" {
 # AWS Provider v6 : `region` 属性の登場
 
 それに対して、 AWS Provider v6 では **リソースに対して `region` 属性を設定するだけ**で**リソース単位でリージョンを指定できる**ようになり、**複数の provider を定義する必要がなくなりました**。
-`region` 属性を省略した場合は (今まで通り) デフォルトのリージョンが適用されます。
+`region` 属性を省略した場合は ( 今まで通り ) provider に設定されたリージョンが適用されます。
 
 ```hcl diff
- # ap-northeast-1 用の provider をデフォルトとして使う
  provider "aws" {
-   region = "ap-northeast-1"
+   region = "ap-northeast-1" # デフォルトのリージョン
  }
 
 -provider "aws" {
@@ -143,17 +159,39 @@ resource "aws_s3_bucket" "main" {
 }
 ```
 
-例えば全リージョンでの GuardDuty 一括有効化などのユースケースもかなり楽になりそうですね。
-う〜ん、非常に良きです。
+例えば複数リージョンでの GuardDuty 一括有効化などのユースケースもかなり楽になりそうですね。
 
-今回紹介したのは `resource` ブロックの例だけでしたが、 Data Source や Ephemeral Resource でも同様に `region` 属性を設定できます。
-ちなみに `region` 属性が設定できるのはリージョナルリソースのみで、グローバルリソースには設定できません (そりゃそう) 。
+---
 
-また、 v6 へのアップグレードガイドも公開されています。
+なお、今回紹介したのは `resource` ブロックの例だけでしたが、 Data Source や Ephemeral Resource などでも同様に `region` 属性を設定できます。
+
+```hcl
+provider "aws" {
+  region = "ap-northeast-1"
+}
+
+data "aws_s3_bucket" "virginia" {
+  region = "us-east-1"
+  bucket = "virginia-bucket
+}
+
+ephemeral "aws_ssm_parameter" "virginia" {
+  region = "us-east-1"
+  arn    = "arn:aws:ssm:us-east-1:012345678910:parameter/virginia-parameter"
+}
+```
+
+ちなみに一部のリソース ( 例えばメタデータリソースやグローバルリソースなど ) には `region` 属性を設定できません。
+`region` 属性を設定できないリソースの一覧については以下をご参照ください。
+
+- [Non-region-aware resources](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/enhanced-region-support#:~:text=Non%E2%80%93region%2Daware%20resources,-This%20section%20lists)
+
+そして v6 へのアップグレードガイドも公開されています。
+
+- [Terraform AWS Provider Version 6 Upgrade Guide](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-6-upgrade)
+
 `region` 属性以外にも色々と破壊的変更も含まれているので、一度確認しておくといいかもしれません。
-( もちろん現在はまだ beta 版なので、今後さらに変更が加わる可能性もあることにご注意ください )
-
-TODO: link
+( もちろん現在はまだ beta 版なので、今後さらに変更が加わる可能性もあることにご注意ください。 )
 
 # まとめ
 
@@ -173,4 +211,8 @@ AWS Provider v6 はまずは 6 週間の beta 期間が設けられ、その間�
 > There will be a 6 week beta period in which we will ask the community for feedback, to better understand the impact of the upgrade experience, to assess the implementation of multi-region and other enhancements and to resolve any issues found.
 > > [[Major Version]: Terraform AWS Provider v6.0.0](https://github.com/hashicorp/terraform-provider-aws/issues/41101)
 
-待ちきれない！！！！
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
+
+楽しみ〜
+
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
