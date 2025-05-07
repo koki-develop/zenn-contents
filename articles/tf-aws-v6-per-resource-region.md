@@ -105,8 +105,6 @@ resource "aws_s3_bucket" "main" {
 }
 ```
 
-そんな感じで、 **AWS Provider で複数のリージョンを扱うのは結構面倒**でした。
-
 :::message
 
 ちなみに OpenTofu ( Terraform の fork プロジェクト ) では v1.9 から provider に対して `for_each` が使用できるようになったそうです。
@@ -114,6 +112,10 @@ resource "aws_s3_bucket" "main" {
 - [OpenTofu 1.9.0 is available now with provider for_each | OpenTofu](https://opentofu.org/blog/opentofu-1-9-0/)
 
 :::
+
+---
+
+そんな感じで、 **AWS Provider で複数のリージョンを扱うのは結構面倒**でした。
 
 # AWS Provider v6 : `region` 属性の登場
 
@@ -217,7 +219,7 @@ import {
 
 リソース単位でリージョンを指定できるようになることで **provider の定義をひとつにまとめることができる**ようになり、且つ**複数のリージョンを動的に扱うことも容易**になります。
 
-複数リージョンを動的に扱うために provider に対して `for_each` を使わせてほしいとずっと思っていましたが、そうではなくあくまでも**単一の provider 定義だけで済む**設計に持っていったのは非常に納得感があります。
+複数リージョンを動的に扱うために provider に対して `for_each` を使えるようにするのではなく、あくまでも**単一の provider 定義だけで済む**設計に持っていったのは非常に納得感があります。
 
 > Currently, each provider configuration in Terraform targets a single AWS Region, leading to increased memory consumption and complexity when managing multi-Region deployments. The new approach leverages an injected region attribute at the resource level, reducing memory overhead and simplifying configuration.
 > 
