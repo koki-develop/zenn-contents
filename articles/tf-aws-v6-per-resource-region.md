@@ -144,7 +144,7 @@ resource "aws_s3_bucket" "main" {
  }
 ```
 
-また、この `region` 属性はあくまでもただの属性なので、 **`for_each` と組み合わせて使用する**ことで**複数リージョンにまとめてリソースを作成**したりすることもできます。
+この `region` 属性はあくまでもただの属性なので、 **`for_each` と組み合わせて使用する**ことで**複数リージョンにまとめてリソースを作成**したりすることもできます。
 
 ```hcl
 provider "aws" {
@@ -162,9 +162,9 @@ resource "aws_s3_bucket" "main" {
 
 例えば複数リージョンでの GuardDuty 一括有効化などのユースケースもかなり楽になりそうですね。
 
----
+## Data Source / Ephemeral Resource
 
-なお、今回紹介したのは `resource` ブロックの例だけでしたが、 Data Source や Ephemeral Resource などでも同様に `region` 属性を設定できます。
+`resource` ブロックだけじゃなく、 Data Source や Ephemeral Resource などでも同様に `region` 属性を設定できます。
 
 ```hcl
 provider "aws" {
@@ -182,12 +182,31 @@ ephemeral "aws_ssm_parameter" "virginia" {
 }
 ```
 
-ちなみに一部のリソース ( 例えばメタデータリソースやグローバルリソースなど ) には `region` 属性を設定できません。
+## import
+
+import 実行時には import id の末尾に `@<region>` を追加することでリージョンを指定できます。
+
+```sh:terraform import コマンドの例
+$ terraform import aws_vpc.example vpc-00000000@us-east-1
+```
+
+```hcl:import ブロックの例
+import {
+  to = aws_vpc.example
+  id = "vpc-00000000@us-east-1"
+}
+```
+
+## `region` 属性を設定できないリソース
+
+一部のリソース ( 例えばメタデータリソースやグローバルリソースなど ) には `region` 属性を設定できません。
 `region` 属性を設定できないリソースの一覧については以下をご参照ください。
 
 - [Non-region-aware resources](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/enhanced-region-support#:~:text=Non%E2%80%93region%2Daware%20resources,-This%20section%20lists)
 
-そして v6 へのアップグレードガイドも公開されています。
+---
+
+また、 v6 へのアップグレードガイドも公開されています。
 
 - [Terraform AWS Provider Version 6 Upgrade Guide](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-6-upgrade)
 
