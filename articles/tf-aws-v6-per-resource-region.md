@@ -14,6 +14,7 @@ Terraform AWS Provider v6 の beta 版がリリースされました！ 🎉 �
 
 <!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
+https://www.hashicorp.com/en/blog/terraform-aws-provider-tops-4-billion-downloads-6-0-now-in-public-beta
 https://github.com/hashicorp/terraform-provider-aws/releases/tag/v6.0.0-beta1
 
 ```hcl
