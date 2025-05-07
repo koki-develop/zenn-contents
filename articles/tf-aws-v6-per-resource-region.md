@@ -63,7 +63,7 @@ resource "aws_acm_certificate" "main" {
 }
 ```
 
-また、 Terraform では **provider に対して `for_each` を使用できない**という制約もあり、複数リージョンにまとめてリソースを作成したいときもなかなかに大変でした。
+また、 Terraform では **provider に対して `for_each` を使用できない**という制約もあり、複数リージョンにまとめてリソースを作成したいときもなかなか大変でした。
 
 ```hcl
 provider "aws" {
