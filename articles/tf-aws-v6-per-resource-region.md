@@ -210,7 +210,7 @@ import {
 
 - [Terraform AWS Provider Version 6 Upgrade Guide](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-6-upgrade)
 
-`region` 属性以外にも色々と破壊的変更も含まれているので、一度確認しておくといいかもしれません。
+`region` 属性以外にも色々と破壊的変更が含まれているので、一度確認しておくといいかもしれません。
 ( もちろん現在はまだ beta 版なので、今後さらに変更が加わる可能性もあることにご注意ください。 )
 
 # まとめ
