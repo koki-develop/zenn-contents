@@ -4,7 +4,8 @@ emoji: "🌏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "aws"]
 publication_name: "terraform_jp"
-published: false
+published: true
+published_at: 2025-05-08 18:00
 ---
 
 <!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
