@@ -34,7 +34,7 @@ AWS Provider v6 の目玉はなんといっても**リソース単位のリー�
 https://github.com/hashicorp/terraform-provider-aws/issues/41101
 https://github.com/hashicorp/terraform-provider-aws/issues/25308
 
-# 複数のリージョンを扱うのは面倒だった
+# 今まで : 複数のリージョンを扱うのは面倒だった
 
 AWS Provider v5 以前では、異なるリージョンにリソースを作成するためには**リージョンごとに provider を定義**して、リソースの `provider` 属性に明示的に指定する必要がありました。
 
@@ -63,7 +63,7 @@ resource "aws_acm_certificate" "main" {
 }
 ```
 
-また、 Terraform では **provider に対して `for_each` を使用できない**という制約もあり、複数リージョンにまとめてリソースを作成したいときも結構大変でした。
+また、 Terraform では **provider に対して `for_each` を使用できない**という制約もあり、複数リージョンにまとめてリソースを作成したいときもなかなかに大変でした。
 
 ```hcl
 provider "aws" {
@@ -117,7 +117,7 @@ resource "aws_s3_bucket" "main" {
 
 # AWS Provider v6 : `region` 属性の登場
 
-それに対して、 AWS Provider v6 では **リソースに対して `region` 属性を設定するだけ**で**リソース単位でリージョンを指定できる**ようになり、**複数の provider を定義する必要がなくなりました**。
+AWS Provider v6 では **リソースに対して `region` 属性を設定するだけ**で**リソース単位でリージョンを指定できる**ようになり、**複数の provider を定義する必要がなくなりました**。
 `region` 属性を省略した場合は ( 今まで通り ) provider に設定されたリージョンが適用されます。
 
 ```hcl diff
