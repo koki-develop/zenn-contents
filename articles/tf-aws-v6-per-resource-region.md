@@ -1,5 +1,5 @@
 ---
-title: "【Terraform】AWS Provider v6 からはリソース単位でリージョンを設定できる"
+title: "【Terraform】AWS Provider v6 からはリソースレベルでリージョンを設定できる"
 emoji: "🌏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "aws"]
@@ -28,7 +28,7 @@ terraform {
 }
 ```
 
-AWS Provider v6 の目玉はなんといっても**リソース単位のリージョン設定**です。
+AWS Provider v6 の目玉はなんといっても**リソースレベルのリージョン設定**です。
 
 - [Terraform AWS Provider Enhanced Region Support](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/enhanced-region-support)
 
@@ -120,7 +120,7 @@ resource "aws_s3_bucket" "main" {
 
 # AWS Provider v6 : `region` 属性の登場
 
-AWS Provider v6 では **リソースに対して `region` 属性を設定するだけ**で**リソース単位でリージョンを指定できる**ようになり、**複数の provider を定義する必要がなくなりました**。
+AWS Provider v6 では **リソースに対して `region` 属性を設定するだけ**で**リソースレベルでリージョンを指定できる**ようになり、**複数の provider を定義する必要がなくなりました**。
 `region` 属性を省略した場合は ( 今まで通り ) provider に設定されたリージョンが適用されます。
 
 ```hcl diff
@@ -218,7 +218,7 @@ import {
 
 # まとめ
 
-リソース単位でリージョンを指定できるようになることで **provider の定義をひとつにまとめることができる**ようになり、且つ**複数のリージョンを動的に扱うことも容易**になります。
+リソースレベルでリージョンを指定できるようになることで **provider の定義をひとつにまとめることができる**ようになり、且つ**複数のリージョンを動的に扱うことも容易**になります。
 
 複数リージョンを動的に扱うために provider に対して `for_each` を使えるようにするのではなく、あくまでも**単一の provider 定義だけで済む**設計に持っていったのは非常に納得感があります。
 
