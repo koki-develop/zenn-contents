@@ -209,7 +209,7 @@ import {
 
 ---
 
-また、 v6 へのアップグレードガイドも公開されています。
+v6 へのアップグレードガイドは以下のページで公開されています。
 
 - [Terraform AWS Provider Version 6 Upgrade Guide](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-6-upgrade)
 
