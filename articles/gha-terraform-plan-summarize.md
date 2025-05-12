@@ -8,7 +8,7 @@ published: true
 published_at: 2025-05-12 18:00
 ---
 
-GitHub Actions の `GITHUB_TOKEN` を使って GitHub Models を呼び出すことができるようになりました。
+GitHub Actions の `GITHUB_TOKEN` を使って GitHub Models を使えるようになりました。
 
 https://github.blog/changelog/2025-04-14-github-actions-token-integration-now-generally-available-in-github-models/
 https://docs.github.com/en/github-models/integrating-ai-models-into-your-development-workflow#using-ai-models-with-github-actions
@@ -281,7 +281,7 @@ https://github.com/koki-develop/terraform-plan-summarize/pull/1#issuecomment-287
 
 # まとめ
 
-サクッと使えて便利ですね。
+無料でサクッと使えて便利ですね。
 [tfcmt](https://github.com/suzuki-shunsuke/tfcmt) も合わせて使うとより捗りそうです。
 
 https://zenn.dev/kou_pg_0131/articles/tfcmt-on-gh-actions
