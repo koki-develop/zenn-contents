@@ -8,7 +8,7 @@ published: true
 published_at: 2025-05-12 18:00
 ---
 
-GitHub Actions の `GITHUB_TOKEN` を使って GitHub Models を使えるようになりました。
+GitHub Actions の `GITHUB_TOKEN` を使って GitHub Models を利用できるようになりました。
 
 https://github.blog/changelog/2025-04-14-github-actions-token-integration-now-generally-available-in-github-models/
 https://docs.github.com/en/github-models/integrating-ai-models-into-your-development-workflow#using-ai-models-with-github-actions
