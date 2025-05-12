@@ -260,14 +260,17 @@ terraform show -json tfplan > tfplan.json
 - uses: peter-evans/create-or-update-comment@v4
   with:
     comment-id: ${{ steps.find-comment.outputs.comment-id }}
-    edit-mode: replace
     issue-number: ${{ github.event.pull_request.number }}
+    edit-mode: replace
     body: |
       <!-- TERRAFORM_PLAN_SUMMARY -->
       ${{ steps.summary.outputs.response }}
 ```
 
 要約した内容は [`actions/ai-inference`](https://github.com/actions/ai-inference) アクションの `outputs.response` から取得できます。
+
+https://github.com/actions/ai-inference/blob/f8ee4c952b7dca7b8a4529edd04dc5cc3d49c435/action.yml#L42-L44
+
 これを [`peter-evans/create-or-update-comment`](https://github.com/peter-evans/create-or-update-comment) アクションを使用して Pull Request にコメントします。
 [`peter-evans/find-comment`](https://github.com/peter-evans/find-comment) アクションと組み合わせることで、ワークフローが複数回実行された場合でも複数のコメントが追加されることはなく、単一のコメントが更新されるようになります。
 
