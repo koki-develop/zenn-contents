@@ -267,7 +267,8 @@ terraform show -json tfplan > tfplan.json
       ${{ steps.summary.outputs.response }}
 ```
 
-[`peter-evans/create-or-update-comment`](https://github.com/peter-evans/create-or-update-comment) アクションを使用して `terraform plan` の実行結果を要約したコメントを Pull Request に追加します。
+要約した内容は [`actions/ai-inference`](https://github.com/actions/ai-inference) アクションの `outputs.response` から取得できます。
+これを [`peter-evans/create-or-update-comment`](https://github.com/peter-evans/create-or-update-comment) アクションを使用して Pull Request にコメントします。
 [`peter-evans/find-comment`](https://github.com/peter-evans/find-comment) アクションと組み合わせることで、ワークフローが複数回実行された場合でも複数のコメントが追加されることはなく、単一のコメントが更新されるようになります。
 
 ![](/images/terraform-plan-summarize/plan-summary.png)
