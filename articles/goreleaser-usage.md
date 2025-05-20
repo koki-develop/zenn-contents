@@ -414,7 +414,7 @@ $ brew install koki-develop/hello-cli/hello-cli
 
 - [AWS](https://aws.amazon.com/jp/) - [aws/homebrew-tap](https://github.com/aws/homebrew-tap)
 - [GoReleaser](https://goreleaser.com/) - [goreleaser/homebrew-tap](https://github.com/goreleaser/homebrew-tap)
-- [Hashicorp](https://www.hashicorp.com/) - [hashicorp/homebrew-tap](https://github.com/hashicorp/homebrew-tap)
+- [HashiCorp](https://www.hashicorp.com/) - [hashicorp/homebrew-tap](https://github.com/hashicorp/homebrew-tap)
 - [1Password](https://1password.com/jp/) - [1Password/homebrew-tap](https://github.com/1Password/homebrew-tap)
 - [Charm](https://charm.sh/) - [charmbracelet/homebrew-tap](https://github.com/charmbracelet/homebrew-tap)
 - [Elastic](https://www.elastic.co/jp/) - [elastic/homebrew-tap](https://github.com/elastic/homebrew-tap)

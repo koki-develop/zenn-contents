@@ -8,7 +8,7 @@ published: true
 published_at: 2024-11-25 18:00
 ---
 
-人類は HCL (Hashicorp Configuration Language) で JavaScript を記述するべきなので、次世代のモダン AltJS である「JS.tf」をリリースしました。
+人類は HCL (HashiCorp Configuration Language) で JavaScript を記述するべきなので、次世代のモダン AltJS である「JS.tf」をリリースしました。
 
 https://github.com/koki-develop/terraform-provider-js
 https://registry.terraform.io/providers/koki-develop/js/latest/docs

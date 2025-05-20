@@ -8,7 +8,7 @@ published: true
 published_at: 2024-12-02 18:00
 ---
 
-人類は HCL (Hashicorp Configuration Language) で HTML を記述するべきなので、次世代のモダン HTML ビルダーである「HTML.tf」をリリースしました。
+人類は HCL (HashiCorp Configuration Language) で HTML を記述するべきなので、次世代のモダン HTML ビルダーである「HTML.tf」をリリースしました。
 
 https://github.com/koki-develop/terraform-provider-html
 https://registry.terraform.io/providers/koki-develop/html/latest/docs
