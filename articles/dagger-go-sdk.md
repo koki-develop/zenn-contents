@@ -10,7 +10,7 @@ published: true
 
 https://qiita.com/advent-calendar/2022/cicd
 
-先日「[3-shake SRE Tech Talk 2022 クリスマス直前会！](https://3-shake.connpass.com/event/267080/)」というイベントで [Dagger についての話](https://koki.me/3-shake-srett-2022-12-15/)をしてきました。
+先日「[3-shake SRE Tech Talk 2022 クリスマス直前会！](https://3-shake.connpass.com/event/267080/)」というイベントで [Dagger についての話](https://koki-develop.github.io/3-shake-srett-2022-12-15/)をしてきました。
 この記事では上記イベントで発表した内容+αについて改めてまとめます。
 
 # Dagger とは
