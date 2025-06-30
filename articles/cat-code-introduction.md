@@ -1,7 +1,7 @@
 ---
 title: "猫と開発する次世代のコーディングエージェント「Cat Code」の紹介"
 emoji: "🐈"
-type: "tech" # tech: 技術記事 / idea: アイデア
+type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["agent", "cat"]
 published: true
 published_at: 2025-06-30 18:00
