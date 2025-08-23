@@ -3,7 +3,8 @@ title: "GitHub Actions の依存関係を出力する「ghatree」の紹介"
 emoji: "🌲"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions"]
-published: false
+published: true
+published_at: 2025-08-25
 ---
 
 GitHub Actions ワークフロー内で利用しているアクションの依存関係を再帰的に取得して出力するコマンドラインツール「ghatree」をつくりました。
