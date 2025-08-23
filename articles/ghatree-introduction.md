@@ -50,7 +50,7 @@ $ npx ghatree@latest --repo koki-develop/ghatree
 $ GITHUB_TOKEN=<your-token> npx ghatree@latest
 ```
 
-プライベートなリポジトリを解析する場合や API のレートリミットを回避する際に有用です。
+プライベートなリポジトリを解析する場合や API のレートリミットを回避するために使えます。
 
 ## JSON 形式で出力する
 
