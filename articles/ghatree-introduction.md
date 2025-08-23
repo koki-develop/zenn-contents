@@ -316,7 +316,7 @@ https://github.com/cli/gh-extension-precompile/blob/f21e338a41ca62b35ae10c057985
 ## ghatree を使用して、 SHA 固定していないアクションを特定する
 
 ghatree では、ワークフロー内で使用しているアクションの依存関係を再帰的に取得できるため、 SHA 固定していないアクションの特定に活用できます。
-以下は ghatree の JSON 出力を再帰的に辿り、 SHA 固定していないアクションをログ出力する Bun Shell スクリプトの例です。
+以下は ghatree の JSON 出力を再帰的に探索し、 SHA 固定していないアクションをログ出力する Bun Shell スクリプトの例です。
 
 ```ts
 import { $ } from "bun";
