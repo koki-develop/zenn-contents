@@ -41,16 +41,16 @@ $ bun x ghatree@latest
 $ npx ghatree@latest --repo koki-develop/ghatree
 ```
 
-## GitHub Token の指定
+## GitHub Token の設定
 
 `ghatree` は内部的に GitHub API を利用してワークフローの情報を取得します。
-その際に利用するトークンは `GITHUB_TOKEN` 環境変数で指定できます。
+その際に利用するトークンは `GITHUB_TOKEN` 環境変数で設定できます。
 
 ```shell
 $ GITHUB_TOKEN=<your-token> npx ghatree@latest
 ```
 
-プライベートなリポジトリを解析する場合や API のレートリミットを回避するために有用です。
+プライベートなリポジトリを解析する場合や API のレートリミットを回避する際に有用です。
 
 ## JSON 形式で出力する
 
