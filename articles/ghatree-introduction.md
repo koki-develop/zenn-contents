@@ -313,6 +313,13 @@ https://github.com/cli/gh-extension-precompile/blob/f21e338a41ca62b35ae10c057985
 
 上記の例では比較的簡単に依存関係を辿ってコミット SHA 固定されていないアクションを特定できましたが、より大きく複雑なワークフローの場合にまた同じような調査を手動で行うのは結構大変です。
 
+:::message
+
+ちなみに、 `cli/gh-extension-precompile` アクションが依存していた `actions/attest-build-provenance` アクションは `actions/attest` アクションに依存しています。
+そこはコミット SHA 固定されているのかどうか、 `actions/attest` アクションは他のアクションに依存しているのか、もし依存しているのであればさらに...というのも確認する必要があるかもしれませんね (やりたくない) 。
+
+:::
+
 ## ghatree を使用して、 SHA 固定していないアクションを特定する
 
 ghatree では、ワークフロー内で使用しているアクションの依存関係を再帰的に取得できるため、 SHA 固定していないアクションの特定に活用できます。
@@ -327,37 +334,37 @@ type Node = {
   [key: string]: any;
 };
 
+// ghatree を使用して依存関係ツリーを取得
 const tree = await $`bunx ghatree@latest --json`.json();
+
+// 再帰的に探索
 traverse(tree, []);
 
 function traverse(node: Node, stacks: Node[]) {
   stacks.push(node);
-  try {
-    // check remote action
-    if (node.type === "action" && !node.path?.startsWith(".")) {
-      // SHA 固定されていないアクションをログ出力
-      if (!node.ref || !isFullSHA(node.ref)) {
-        console.warn(
-          stacks
-            .slice(1)
-            .map((node) => {
-              if (node.type !== "action") {
-                return node.path;
-              }
-              return `${node.repository.owner}/${node.repository.name}${node.path ? `/${node.path}` : ""}${node.ref ? `@${node.ref}` : ""}`;
-            })
-            .join(" > "),
-        );
-        return;
-      }
+  // check remote action
+  if (node.type === "action" && !node.path?.startsWith(".")) {
+    // SHA 固定されていないアクションをログ出力
+    if (!node.ref || !isFullSHA(node.ref)) {
+      console.warn(
+        stacks
+          .slice(1)
+          .map((node) => {
+            if (node.type !== "action") {
+              return node.path;
+            }
+            return `${node.repository.owner}/${node.repository.name}${node.path ? `/${node.path}` : ""}${node.ref ? `@${node.ref}` : ""}`;
+          })
+          .join(" > "),
+      );
     }
-
-    for (const dependency of node.dependencies) {
-      traverse(dependency, stacks);
-    }
-  } finally {
-    stacks.pop();
   }
+
+  for (const dependency of node.dependencies) {
+    traverse(dependency, stacks);
+  }
+
+  stacks.pop();
 }
 
 function isFullSHA(version: string): boolean {
@@ -374,6 +381,8 @@ $ bun run ./index.ts
 .github/workflows/example.yml > main > cli/gh-extension-precompile@9e2237c30f869ad3bcaed6a4be2cd43564dd421b > actions/attest-build-provenance@v1
 ```
 
+`cli/gh-extension-precompile` アクションが依存している `actions/setup-go@v5` や `actions/attest-build-provenance@v1` といったアクションがコミット SHA 固定されていないことが確認できます。
+
 # まとめ
 
-便利〜。
+便利ですね。
