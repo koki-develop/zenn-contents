@@ -144,6 +144,18 @@ GitHub に関する様々な操作を行うことができます。
 https://zenn.dev/kou_pg_0131/articles/gh-cli-extension-in-go
 https://zenn.dev/kou_pg_0131/articles/gh-grass-introduction
 
+# jnv - JSON をプレビューしながら jq のフィルタを書ける
+
+https://github.com/ynqa/jnv
+
+jq のフィルタの動作確認にめちゃ便利です。
+
+![](/images/jnv-introduction/basic.gif)
+
+紹介記事を書いたのでご参考までに。
+
+https://zenn.dev/kou_pg_0131/articles/jnv-introduction
+
 # mise - asdf 互換のバージョン管理ツール
 
 https://github.com/jdx/mise
