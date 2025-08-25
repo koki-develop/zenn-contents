@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions の依存関係を出力する「ghatree」の紹介"
+title: "GitHub Actions の依存関係を再帰的に出力する「ghatree」の紹介"
 emoji: "🌲"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions"]
