@@ -340,14 +340,14 @@ const tree = await $`bunx ghatree@latest --json`.json();
 // 再帰的に探索
 traverse(tree, []);
 
-function traverse(node: Node, stacks: Node[]) {
-  stacks.push(node);
+function traverse(node: Node, stack: Node[]) {
+  stack.push(node);
   // check remote action
   if (node.type === "action" && !node.path?.startsWith(".")) {
     // SHA 固定されていないアクションをログ出力
     if (!node.ref || !isFullSHA(node.ref)) {
       console.warn(
-        stacks
+        stack
           .slice(1)
           .map((node) => {
             if (node.type !== "action") {
@@ -361,10 +361,10 @@ function traverse(node: Node, stacks: Node[]) {
   }
 
   for (const dependency of node.dependencies) {
-    traverse(dependency, stacks);
+    traverse(dependency, stack);
   }
 
-  stacks.pop();
+  stack.pop();
 }
 
 function isFullSHA(version: string): boolean {
