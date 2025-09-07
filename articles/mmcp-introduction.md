@@ -3,7 +3,8 @@ title: "複数の AI エージェントの MCP サーバーの設定を一元管
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ai", "mcp", "cli"]
-published: false
+published: true
+published_at: 2025-09-08 18:00
 ---
 
 複数の AI エージェントごとに毎回 MCP サーバーの設定するのって面倒ですよね。設定忘れも頻繁にあります。
