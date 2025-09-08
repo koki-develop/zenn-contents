@@ -1,5 +1,5 @@
 ---
-title: "複数の AI エージェントの MCP サーバーの設定を一元管理する「mmcp」の紹介"
+title: "複数 AI エージェントの MCP サーバーの設定を一元管理する「mmcp」の紹介"
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ai", "mcp", "cli"]
