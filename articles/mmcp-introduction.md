@@ -276,7 +276,7 @@ Codex CLI の TOML 形式の設定ファイルの更新には [@shopify/toml-pat
 
 https://www.npmjs.com/package/@shopify/toml-patch
 
-```ts
+```ts:使用例
 import { updateTomlValues } from "@shopify/toml-patch";
 
 export const sampleToml = `
