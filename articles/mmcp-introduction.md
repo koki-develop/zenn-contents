@@ -104,7 +104,7 @@ $ mmcp apply
 ✔ Applied config: gemini-cli
 ```
 
-:::details Claude Code の例
+:::details Claude Code
 
 ```bash
 $ claude mcp list
@@ -140,7 +140,7 @@ everything: npx -y @modelcontextprotocol/server-everything@latest - ✓ Connecte
 
 :::
 
-:::details Codex CLI の例
+:::details Codex CLI
 
 ```bash
 $ codex
@@ -176,7 +176,7 @@ args = ["-y", "@upstash/context7-mcp@latest"]
 
 :::
 
-:::details Gemini CLI の例
+:::details Gemini CLI
 
 ```bash
 $ gemini mcp list
