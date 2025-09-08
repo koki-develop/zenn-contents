@@ -267,6 +267,54 @@ v0.3.1 時点で対応している AI エージェントは以下の通りです
 | [Cursor](https://docs.cursor.com/) | `cursor` | `~/.cursor/mcp.json` |
 | [Gemini CLI](https://google-gemini.github.io/gemini-cli/) | `gemini-cli` | `~/.gemini/settings.json` |
 
+# 仕組み
+
+基本的には `.mmcp.json` の内容を各 AI エージェントの設定ファイル内の MCP サーバー設定部分にマージしているだけです。
+
+Codex CLI の TOML 形式の設定ファイルの更新には [@shopify/toml-patch](https://www.npmjs.com/package/@shopify/toml-patch) を使っています。
+コメントを保持したまま更新できるので便利です。
+
+https://www.npmjs.com/package/@shopify/toml-patch
+
+```ts
+import { updateTomlValues } from "@shopify/toml-patch";
+
+export const sampleToml = `
+# This is a sample TOML file
+title = "TOML Example"
+
+[owner]
+name = "Test User"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ] # Comment after array
+`;
+
+const output = updateTomlValues(sampleToml, [
+  [["owner", "dotted", "notation"], 123.5],
+  [["database", "server"], "changed"],
+  [["top_level"], true],
+  [
+    ["database", "backup_ports"],
+    [8003, 8004],
+  ],
+]);
+console.log(output);
+// => # This is a sample TOML file
+//    title = "TOML Example"
+//    top_level = true
+//
+//    [owner]
+//    name = "Test User"
+//    dotted.notation = 123.5
+//
+//    [database]
+//    server = "changed"
+//    ports = [ 8001, 8001, 8002 ] # Comment after array
+//    backup_ports = [8003, 8004]
+```
+
 # まとめ
 
 既存の類似ツールはありそうですが、せっかくなので自作しました。
