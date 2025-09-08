@@ -247,7 +247,7 @@ mmcp の設定ファイルは `~/.mmcp.json` に保存されます。
 
 :::message
 
-僕はこの設定ファイルを dotfiles で管理しています。
+ちなみに僕はこの設定ファイルを dotfiles で管理しています。
 
 - [koki-develop/dotfiles/dot_mmcp.json](https://github.com/koki-develop/dotfiles/blob/main/dot_mmcp.json)
 
