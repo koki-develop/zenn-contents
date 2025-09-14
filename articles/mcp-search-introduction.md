@@ -9,6 +9,8 @@ published_at: 2025-09-16 18:00
 
 先日、公式から MCP Registry が発表されました。 ( 現在はプレビュー版 )
 
+https://registry.modelcontextprotocol.io
+
 <!-- text-lint-disable ja-technical-writing/no-doubled-joshi -->
 
 MCP Registry は MCP サーバーの配布方法および発見方法を標準化し、信頼性の高い単一情報源を提供することを目的とした中央レジストリです。
