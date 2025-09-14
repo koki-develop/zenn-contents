@@ -3,7 +3,8 @@ title: "MCP Registry の MCP サーバーを検索できる「MCP Search」の�
 emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["mcp", "ai"]
-published: false
+published: true
+published_at: 2025-09-16 18:00
 ---
 
 先日、公式から MCP Registry が発表されました。 ( 現在はプレビュー版 )
