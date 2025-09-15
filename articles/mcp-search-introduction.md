@@ -47,7 +47,7 @@ _こんな感じ_
 Firebase で構築されています。
 
 - Cloud Functions for Firebase: 定期的に MCP Registry から MCP サーバーのデータを取得し、 Firestore に保存
-- Firebase Hosting: React 製 SPA を配信
+- Firebase Hosting: React 製 SPA をホスティング
 
 ## MCP Registry から MCP サーバーを取得する
 
