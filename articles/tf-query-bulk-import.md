@@ -1,5 +1,5 @@
 ---
-title: "【Terraform 1.4】terraform query コマンドで既存リソースを一括 import する"
+title: "【Terraform 1.14】terraform query コマンドで既存リソースを一括 import する"
 emoji: "📥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform"]
