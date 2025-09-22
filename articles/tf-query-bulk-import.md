@@ -127,7 +127,7 @@ list.aws_instance.main   account_id=123456789012,id=i-1122334455667788c,region=a
 
 # 既存リソースを一括で import する
 
-`terraform query` コマンドに **`-generate-config-out=<任意任ファイル名>` フラグ**を設定すると、**取得したリソース一覧に対応する `resource` ブロックおよび `import` ブロックが自動生成されます**。
+`terraform query` コマンドに **`-generate-config-out=<任意のファイル名>` フラグ**を設定すると、**取得したリソース一覧に対応する `resource` ブロックおよび `import` ブロックが自動生成されます**。
 
 ```bash
 $ terraform query -generate-config-out=generated.tf
