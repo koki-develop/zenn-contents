@@ -17,7 +17,7 @@ https://github.com/hashicorp/terraform/releases/tag/v1.14.0-beta1
 > - **List Resources**: List resources can be defined in `*.tfquery.hcl` files and allow querying and filterting existing infrastructure.
 > - A new Terraform command `terraform query`: Executes list operations against existing infrastructure and displays the results. The command can optionally generate configuration for importing results into Terraform.
 
-どうやらこれらの新機能を使うと Terraform 管理外の既存リソースを取得したり、それらを一括で import したりできるようです。
+どうやらこれらの新機能を使うと Terraform 管理外の既存リソースの一覧を取得したり、それらを一括で import したりできるようです。
 
 というわけで試してみました。
 
