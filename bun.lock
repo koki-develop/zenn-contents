@@ -4,7 +4,7 @@
     "": {
       "name": "zenn-contents",
       "dependencies": {
-        "zenn-cli": "0.2.1",
+        "zenn-cli": "0.2.3",
       },
       "devDependencies": {
         "@types/bun": "1.2.12",
@@ -1193,7 +1193,7 @@
 
     "yocto-queue": ["yocto-queue@0.1.0", "", {}, "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="],
 
-    "zenn-cli": ["zenn-cli@0.2.1", "", { "bin": { "zenn": "dist/server/zenn.js" } }, "sha512-8ipbiIHOGIK1Gp1ifNi4rKY3+YohcXCrQCuz6w78OQ532WoU2xMiV0hFWRR/obmuPYwbiGWd/Xt/A4tYCaOHTA=="],
+    "zenn-cli": ["zenn-cli@0.2.3", "", { "bin": { "zenn": "dist/server/zenn.js" } }, "sha512-ghYpg2foOeFExvtWKDFSjCsq+utYf84jApw37Wli1MnSAE1la40GZ47kXQDQKeh/1LV2AT0LDMYWbmE64Z4ZSg=="],
 
     "zlibjs": ["zlibjs@0.3.1", "", {}, "sha512-+J9RrgTKOmlxFSDHo0pI1xM6BLVUv+o0ZT9ANtCxGkjIVCCUdx9alUF8Gm+dGLKbkkkidWIHFDZHDMpfITt4+w=="],
 
