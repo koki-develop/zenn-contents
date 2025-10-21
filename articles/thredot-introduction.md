@@ -172,14 +172,6 @@ https://qiita.com/oukayuka/items/d3cee72501a55e8be44a
 ファイル添付機能やエクスポート機能とかは作りたいなと思っています。
 あとは自分がほしいなと思った機能を気ままに追加していく予定です。
 
-:::message
-
-(追記) 下記リポジトリでタスク管理するようにしてみました。
-
-- [koki-develop/thredot-roadmap: thredot.org roadmap](https://github.com/koki-develop/thredot-roadmap)
-
-:::
-
 # まとめ
 
 たくさんメモっていきたい。
