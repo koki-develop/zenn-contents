@@ -61,6 +61,7 @@ https://codize.dev/playground
 - Go
 - Python
 - Ruby
+- Rust
 - JavaScript
 - TypeScript
 
