@@ -3,7 +3,8 @@ title: "初心者向けプログラミング学習サービス「Codize」を公
 emoji: "🔰"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["初心者", "プログラミング"]
-published: false
+published: true
+published_at: 2026-02-16 18:00
 ---
 
 初心者向けのプログラミング学習サービス「Codize」を公開したので紹介します。
