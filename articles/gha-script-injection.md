@@ -263,7 +263,7 @@ error[template-injection]: code injection via template expansion
 
 本当に気をつけてほしいです。
 
-スクリプトインジェクションについて知らなかった人は「GitHub CI/CD実践ガイド」の「第15章 GitHub Actions のセキュリティ」を穴が開くまで読んでください。
+スクリプトインジェクションについて知らなかった人は「GitHub CI/CD実践ガイド」の「第15章 GitHub Actions のセキュリティ」を穴が開くまで読んでください。他の章も読んでください。めちゃくちゃ良書です。
 
 https://www.amazon.co.jp/dp/4297141736
 
