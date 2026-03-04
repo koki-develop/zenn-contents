@@ -1,6 +1,6 @@
 ---
 title: "【GitHub Actions】スクリプトインジェクションの実践例"
-emoji: "👌"
+emoji: "💉"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["github", "githubactions", "security"]
 published: true
