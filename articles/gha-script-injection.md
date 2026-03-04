@@ -204,7 +204,7 @@ https://docs.github.com/ja/actions/reference/workflows-and-actions/variables
 ---
 
 PR タイトルやブランチ名以外の、ユーザーが直接コントロールすることが難しい値 (たとえば `github.repository` とか) であれば `run` の中で `${{}}` を直接使っても実際にインジェクションされる可能性は低いですが、
-「これなら `${{}}` 直接使っても大丈夫 / 大丈夫じゃない」というのを**いちいち毎回正確に判断するのは非常に重労働**なので、「**とにかく `run` の中では `${{}}` を直接使わない**」「**必要な値は環境変数を経由して渡す**」というのを徹底した方がよっぽど楽ですし、安全です。
+とはいえ「これなら `${{}}` 直接使っても大丈夫 / 大丈夫じゃない」というのを**いちいち毎回正確に判断するのは非常に重労働**なので、「**とにかく `run` の中では `${{}}` を直接使わない**」「**必要な値は環境変数を経由して渡す**」というのを徹底した方がよっぽど楽ですし、安全です。
 
 ## たまにある勘違い
 
@@ -233,12 +233,15 @@ _GitHub Actions の実行ログ_
 
 ## 自動検出するために
 
-actionlint や zizmor を使ってください。今回紹介した問題のあるワークフローは、全てこれらのツールで検出できます。
+actionlint や zizmor などのツールを使ってください。今回紹介した問題のあるワークフローは、全てこれらのツールで検出できます。
 
 https://zenn.dev/kou_pg_0131/articles/gha-static-checker
 
 ```bash:actionlint の出力例
-.github/workflows/example.yml:8:36: "github.event.pull_request.title" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details [expression]
+.github/workflows/title.yml:8:36: "github.event.pull_request.title" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details [expression]
+  |
+8 |       - run: echo "PR title is ${{ github.event.pull_request.title }}"
+  |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
 ```bash:zizmor の出力例
