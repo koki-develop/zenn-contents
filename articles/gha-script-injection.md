@@ -48,6 +48,8 @@ jobs:
 
 それではさっそく、「**`"; echo INJECTED"`**」というよくある名前で Pull Request を作成してみましょう。
 
+![Pull Request](/images/gha-script-injection/title-pr.png)
+
 https://github.com/koki-develop/gha-script-injection-example/pull/1
 
 実行ログを確認してみましょう。
@@ -100,6 +102,8 @@ jobs:
 **脆弱ですねェ〜〜〜〜〜〜〜〜！！**
 
 それではさっそく、「**`main";echo${IFS}INJECTED"`**」というよくある名前のブランチ名で Pull Request を作成してみましょう。
+
+![Pull Request](/images/gha-script-injection/branch-pr.png)
 
 https://github.com/koki-develop/gha-script-injection-example/pull/2
 
