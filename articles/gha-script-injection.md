@@ -52,7 +52,7 @@ jobs:
 
 https://github.com/koki-develop/gha-script-injection-example/pull/1
 
-実行ログを確認してみましょう。
+GitHub Actions の実行ログを確認してみましょう。
 
 ![実行ログ](/images/gha-script-injection/title.png)
 _GitHub Actions の実行ログ_
@@ -107,7 +107,7 @@ jobs:
 
 https://github.com/koki-develop/gha-script-injection-example/pull/2
 
-実行ログを確認してみましょう。
+GitHub Actions の実行ログを確認してみましょう。
 
 ![実行ログ](/images/gha-script-injection/branch.png)
 _GitHub Actions の実行ログ_
