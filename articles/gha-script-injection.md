@@ -97,11 +97,11 @@ jobs:
       - run: echo "PR Head Ref is ${{ github.head_ref }}"
 ```
 
-タイトルと違ってブランチ名であればインジェクションされないとでも思ったのでしょうか？
+タイトルと違って、ブランチ名であればインジェクションされないとでも思ったのでしょうか？
 
 **脆弱ですねェ〜〜〜〜〜〜〜〜！！**
 
-それではさっそく、「**`main";echo${IFS}INJECTED"`**」というよくある名前のブランチ名で Pull Request を作成してみましょう。
+それではさっそく、「**`main";echo${IFS}INJECTED"`**」というよくある名前のブランチで Pull Request を作成してみましょう。
 
 ![Pull Request](/images/gha-script-injection/branch-pr.png)
 
