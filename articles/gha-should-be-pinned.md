@@ -3,7 +3,8 @@ title: "GitHub Actions で参照するアクションはコミット SHA で固�
 emoji: "📌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["github", "githubactions", "security"]
-published: false
+published: true
+published_at: 2026-03-11 18:00
 ---
 
 ```yaml
