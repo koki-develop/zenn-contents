@@ -121,6 +121,18 @@ https://zenn.dev/shunsuke_suzuki/articles/github-actions-enforce-sha-pinning
 https://www.wiz.io/blog/new-github-action-supply-chain-attack-reviewdog-action-setup
 https://semgrep.dev/blog/2025/popular-github-action-tj-actionschanged-files-is-compromised/
 
+## 「でもメジャーバージョンタグの指定は便利じゃん」
+
+「_**`@v1` みたいに指定しておけば、何もしなくてもマイナー / パッチバージョンのアップデートが勝手に適用されていくから便利じゃん！！**_」
+
+たしかに！！！！完全に盲点でした！！！！それは便利ですね！！！！完全に同意いたします！！！！
+
+そういうことでしたら、プロダクトの依存ライブラリ等も全て勝手にアップデートされていった方が絶対に便利なので、たとえば**毎日自動で `npm update` + commit & push を実行する** GitHub Actions ワークフローを作ってみてもいいかもしれませんね！！！！
+
+えぇ！？！？「_**それはさすがに危ないからやりたくない**_」ですって！？！？
+「_**たとえマイナー / パッチバージョンアップデートであっても、破壊的変更やゼロデイ脆弱性などが含まれる可能性は排除できない**_」ですって！？！？！？！？
+えぇ〜〜〜〜〜っっっ！？！？！？！？
+
 ## 「アップデートがめんどくさい」
 
 「_**アクションのバージョンを上げるたびにいちいちコミット SHA を確認するのは大変だしめんどくさいよ！**_」
