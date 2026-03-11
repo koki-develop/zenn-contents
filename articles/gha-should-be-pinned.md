@@ -135,8 +135,6 @@ https://zenn.dev/shunsuke_suzuki/articles/github-actions-enforce-sha-pinning
 
 「_**確かに理屈として起こりうるのはわかるけど、実際に有名リポジトリの Git タグやブランチが悪意を持って書き換えられることなんてないでしょ？**_」
 
-とても平和な世界観をお持ちで羨ましい限りです。
-
 たまたまこんな記事を見かけましたので貼っておきますね。
 
 https://www.wiz.io/blog/new-github-action-supply-chain-attack-reviewdog-action-setup
@@ -145,8 +143,6 @@ https://semgrep.dev/blog/2025/popular-github-action-tj-actionschanged-files-is-c
 ## 「でもメジャーバージョンタグの指定は便利じゃん」
 
 「_**`@v1` みたいに指定しておけば、何もしなくてもマイナー / パッチバージョンのアップデートが勝手に適用されていくから便利じゃん！！**_」
-
-たしかに、それは盲点でした。完全に同意いたします。便利なことは良いことでございます。
 
 そういうことでしたら、プロダクトの依存ライブラリ等も全て勝手にアップデートされていった方が絶対に便利なので、たとえば**毎日自動で依存ライブラリのバージョンを勝手にアップデートして main ブランチに直接 commit & push する** GitHub Actions ワークフローを作ってみるといいかもしれませんね。
 
@@ -158,11 +154,9 @@ https://semgrep.dev/blog/2025/popular-github-action-tj-actionschanged-files-is-c
 
 「_**アクションのバージョンを上げるたびにいちいちコミット SHA を確認するのは大変だしめんどくさいよ！**_」
 
-お気持ち大変よくわかります。
+どうやら世の中には [**Dependabot**](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide) や [**Renovate**](https://www.mend.io/renovate/) などといった便利なツールがあるらしいですよ。これらはいずれも**コミット SHA 指定のアクションの自動バージョンアップをサポートしている**ようです。
 
-どうやら世の中には [**Dependabot**](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide) や [**Renovate**](https://www.mend.io/renovate/) などといった便利なツールがあるらしいと聞きました。これらはいずれも**コミット SHA 指定のアクションの自動バージョンアップをサポートしている**ようでございます。
-
-もしくは、最新バージョンに上げるだけなら `pinact run --update` コマンドを使っても大丈夫ですよ。
+もしくは、最新バージョンに上げるだけなら `pinact run --update` コマンドを使っても大丈夫です。
 
 ```bash
 # 参照しているアクションが最新にアップデートされる
@@ -175,19 +169,15 @@ $ pinact run --update
 
 https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases
 
-全くもっておっしゃる通りでございます。反論の余地もございません。
-
 Immutable Releases は**デフォルトでは無効になっています**が、あなたが使用するありとあらゆるアクションや、さらにそれらのアクションが内部的に依存しているアクションなども含めた**全てのリポジトリで Immutable Releases が有効になっているといいですね**。
 
-また、メジャーバージョンのみの Git タグ (`v1` など) はマイナー / パッチバージョンアップなどで頻繁に上書き更新するために **Release に紐づいていない**ケースが普通なので、もしもそれらを参照している場合はたとえ **Immutable Releases が有効になっていても意味がありません**が、お気になさらないでくださいね。
+また、メジャーバージョンのみの Git タグ (`v1` など) はマイナー / パッチバージョンアップなどで頻繁に上書き更新するために **Release に紐づいていない**ケースが普通なので、もしもそれらを参照している場合はたとえ **Immutable Releases が有効になっていても意味がありません**が、気にしないでください。
 
 ## 「コミット SHA を間違えてしまったとき、見分けがつかない」
 
 「**万が一誤って悪意のあるフォークリポジトリのコミット SHA を指定しまう可能性は排除できないし、その時にコミット SHA だと人の目では見分けがつかなくてむしろ危険だよ！**」
 
-大変ごもっともなご意見でございます。
-
-この機会に是非とも **[zizmor](https://github.com/zizmorcore/zizmor)** をお使いになられてください。**なりすましコミット SHA を検出するための機能**がございます。
+この機会に是非とも **[zizmor](https://github.com/zizmorcore/zizmor)** をお使いになられてください。**なりすましコミット SHA を検出するための機能**があります。
 
 > ### `impostor-commit`
 > Detects commits within a repository action's network that are not present on the repository itself, also known as "impostor" commits.
