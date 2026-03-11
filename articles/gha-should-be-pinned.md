@@ -41,6 +41,23 @@ $ pinact run
 - uses: foo/action@v1
 ```
 
+```mermaid
+sequenceDiagram
+    participant gha as ワークフロー
+    participant repo as foo/action リポジトリ
+    actor attacker as 攻撃者
+
+    Note over repo: v1 タグ<br>(正規のコミット A)
+    gha->>repo: uses: foo/action@v1
+    repo-->>gha: 正規のコードを実行 ✅
+
+    attacker->>repo: v1 タグを悪意のあるコミット X に書き換え 🚨
+    Note over repo: v1 タグ<br>(悪意のあるコミット X)
+
+    gha->>repo: uses: foo/action@v1
+    repo-->>gha: (ワークフロー定義は一切変更していないのに)<br>悪意のあるコードが実行される 💀
+```
+
 詳しくは以下の記事を読んでください。
 
 https://zenn.dev/shunsuke_suzuki/articles/pinact-pin-github-actions-version
