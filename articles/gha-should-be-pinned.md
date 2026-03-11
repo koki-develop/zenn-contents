@@ -38,7 +38,7 @@ $ pinact run
 例えば以下のようにアクションを参照している場合、もしも攻撃者によって `foo/action` リポジトリの v1 タグが書き換えられたときに**アクション利用者側の GitHub Actions ワークフロー上で**悪意のあるコードが実行されます。
 
 ```yaml
-- uses: foo/action@v1
+- uses: foo/action@v1 # Git タグで指定
 ```
 
 ```mermaid
@@ -76,7 +76,9 @@ https://zenn.dev/shunsuke_suzuki/articles/pinact-pin-github-actions-version
 - uses: foo/action@a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0 # v1.0.0
 ```
 
-いちいちアクションのコミット SHA を確認するのは大変なので、前述した Shunsuke Suzuki さんの記事で紹介されている [pinact](https://github.com/suzuki-shunsuke/pinact) を使いましょう。
+コミット SHA は Git タグやブランチとは違って immutable なので、参照先のアクションの変更による想定外の影響を受けるリスクを軽減することができます。
+
+とはいえ、いちいちアクションのコミット SHA を確認するのは大変なので、前述した Shunsuke Suzuki さんの記事で紹介されている [pinact](https://github.com/suzuki-shunsuke/pinact) を使いましょう。
 
 https://github.com/suzuki-shunsuke/pinact
 
