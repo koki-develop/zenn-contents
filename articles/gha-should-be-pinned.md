@@ -142,12 +142,6 @@ https://semgrep.dev/blog/2025/popular-github-action-tj-actionschanged-files-is-c
 
 どうやら世の中には [**Dependabot**](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide) や [**Renovate**](https://www.mend.io/renovate/) などといった便利なツールがあるらしいと聞きました。これらはいずれも**コミット SHA 指定のアクションの自動バージョンアップをサポートしている**ようでございます。
 
-> Dependabot only supports updates to GitHub Actions using the GitHub repository syntax, such as `actions/checkout@v5` or `actions/checkout@<commit>` .
-> > [Dependabot supported ecosystems and repositories - GitHub Docs](https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories?utm_source=chatgpt.com#github-actions)
-
-> Renovate will update the commit SHA according to the GitHub tag you specified. Renovate can update digests that use SHA1 and SHA256 algorithms.
-> > [Automated Dependency Updates for GitHub Actions - Renovate Docs](https://docs.renovatebot.com/modules/manager/github-actions/?utm_source=chatgpt.com#digest-pinning-and-updating)
-
 もしくは、最新バージョンに上げるだけなら `pinact run --update` コマンドを使っても大丈夫ですよ。
 
 ```bash
