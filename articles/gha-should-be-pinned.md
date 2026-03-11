@@ -21,6 +21,7 @@ published_at: 2026-03-11 18:00
 
 # 要約
 
+- アクションを Git タグやブランチで指定しないでください。
 - [pinact](https://github.com/suzuki-shunsuke/pinact) をインストールしてください。
 - `pinact run` を実行してください。
 
