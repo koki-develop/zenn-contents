@@ -199,10 +199,6 @@ error[impostor-commit]: commit with no history in referenced repository
    = note: this finding has an auto-fix
 ```
 
-私は難しいことはあまりよくわからないのですが、どうやら一般的なプロダクト開発では品質を保つためにこういった**静的検査ツールを利用するのが当たり前**らしいです。
-
-https://zenn.dev/kou_pg_0131/articles/gha-static-checker
-
 ## 「コミット SHA 固定だけで全てのセキュリティリスクを排除できるわけではないよね？」
 
 「_**例えば参照しているアクションが間接的に他のアクションを Git タグで参照していたり、そもそもアクションの安定バージョンが既に侵害されていたりする場合など、コミット SHA で固定することだけでは排除できないリスクは色々あるよね？**_」
