@@ -107,7 +107,7 @@ $ pinact run
 
 # コミット SHA 指定を強制する
 
-リポジトリ設定でアクションのコミット SHA 指定を強制することができます。
+リポジトリ設定でアクションのコミット SHA 指定を強制することもできます。
 
 https://github.blog/changelog/2025-08-15-github-actions-policy-now-supports-blocking-and-sha-pinning-actions/
 
