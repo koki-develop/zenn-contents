@@ -140,6 +140,15 @@ https://zenn.dev/shunsuke_suzuki/articles/github-actions-enforce-sha-pinning
 https://www.wiz.io/blog/new-github-action-supply-chain-attack-reviewdog-action-setup
 https://semgrep.dev/blog/2025/popular-github-action-tj-actionschanged-files-is-compromised/
 
+:::message
+
+(2026/03/21 追記)
+Trivy のアクションもやられましたね。
+
+- [Trivy Compromised a Second Time - Malicious v0.69.4 Release, aquasecurity/setup-trivy, aquasecurity/trivy-action GitHub Actions Compromised - StepSecurity](https://www.stepsecurity.io/blog/trivy-compromised-a-second-time---malicious-v0-69-4-release)
+
+:::
+
 ## 「でもメジャーバージョンタグの指定は便利じゃん」
 
 「_**`@v1` みたいに指定しておけば、何もしなくてもマイナー / パッチバージョンのアップデートが勝手に適用されていくから便利じゃん！！**_」
