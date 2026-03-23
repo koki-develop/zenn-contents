@@ -172,6 +172,10 @@ Trivy のアクションもやられましたね。
 $ pinact run --update
 ```
 
+詳細な手順については以下の記事をご参照ください。
+
+https://zenn.dev/kou_pg_0131/articles/gha-update-pinned-actions
+
 ## 「Immutable Releases が有効になってればいいじゃん」
 
 「_**アクションのリポジトリ側で Immutable Releases が有効になっていれば Git タグの書き換えはできないし安全でしょ？**_」
