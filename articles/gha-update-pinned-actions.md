@@ -111,7 +111,7 @@ Dependabot による GitHub Actions の依存関係の更新は、以下のフ�
 > - For GitHub Actions, use the value `/`. Dependabot will search the `/.github/workflows` directory, as well as the `action.yml/action.yaml` file from the root directory.
 > > [Dependabot options reference - GitHub Docs](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#directories-or-directory--)
 
-デフォルトでは `.github/actions/**/action.{yml,yaml}` などのファイルは**対象外**となることに注意してください。
+デフォルトではサブディレクトリに配置された `action.{yml,yaml}` (例: `.github/actions/my-action/action.yml`) は**対象外**となることに注意してください。
 
 https://github.com/dependabot/dependabot-core/issues/6704
 
@@ -173,7 +173,7 @@ Renovate による GitHub Actions の依存関係の更新は、以下のファ�
 > ```
 > > [Automated Dependency Updates for GitHub Actions - Renovate Docs](https://docs.renovatebot.com/modules/manager/github-actions/#file-matching)
 
-Dependabot とは違って、`.github/actions/**/action.{yml,yaml}` などのファイルにもデフォルトで対応しています。
+Dependabot とは違って、サブディレクトリに配置された `action.{yml,yaml}` などにもデフォルトで対応しています。
 
 # Dependabot / Renovate を使う場合の注意点
 
