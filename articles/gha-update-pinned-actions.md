@@ -18,6 +18,10 @@ https://zenn.dev/kou_pg_0131/articles/gha-should-be-pinned
 
 具体的な設定方法をまとめておいた方がよさそうだなと思ったので、まとめます。
 
+- [手動で更新する場合 (pinact)](#%E6%89%8B%E5%8B%95%E3%81%A7%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-(pinact))
+- [Dependabot を使う場合](#dependabot-%E3%82%92%E4%BD%BF%E3%81%86%E5%A0%B4%E5%90%88)
+- [Renovate を使う場合](#renovate-%E3%82%92%E4%BD%BF%E3%81%86%E5%A0%B4%E5%90%88)
+
 # 手動で更新する場合 (pinact)
 
 冒頭の記事内でも書いてあるように、[pinact](https://github.com/suzuki-shunsuke/pinact) を使うのが楽です。
