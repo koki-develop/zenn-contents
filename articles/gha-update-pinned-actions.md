@@ -164,7 +164,8 @@ Renovate による GitHub Actions の依存関係の更新は、以下のファ�
 - `workflow-templates/**/*.yml`
 - `.gitea/workflows/**/*.yml`
 - `.forgejo/workflows/**/*.yml`
-- `**/action.yml / **/action.yaml`
+- `**/action.yml`
+- `**/action.yaml`
 
 > By default, Renovate will check any files matching any of the following regular expressions:
 > ```
@@ -191,6 +192,9 @@ Renovate にも脆弱性アラート検出の機能はありますが、この�
 > Renovate can read GitHub's Vulnerability Alerts to customize its Pull Requests. For this to work, you must enable the [Dependency graph](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph), and [Dependabot alerts](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository).
 > > [Configuration Options - Renovate Docs](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)
 
+なので、「常に即日アップデート！！」のような運用をしていると、万が一最新バージョンに脆弱性が含まれていても、気づかずにそのままになってしまう可能性があります。
+対策としては Renovate の [`minimumReleaseAge`](https://docs.renovatebot.com/key-concepts/minimum-release-age/) や Dependabot の [`cooldown`](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown-) を有効にして、ある程度リリースから時間が経っているバージョンに更新するようにする、などの運用が考えられます。
+
 :::message
 
 Renovate にはオープンソースの脆弱性データベースである [OSV](https://osv.dev) と連携した脆弱性検出の機能もありますが、こちらは現時点で GitHub Actions には対応していません。
@@ -210,9 +214,6 @@ Renovate にはオープンソースの脆弱性データベースである [OSV
 > > [Configuration Options - Renovate Docs](https://docs.renovatebot.com/configuration-options/#osvvulnerabilityalerts)
 
 :::
-
-なので、「常に即日アップデート！！」のような運用をしていると、万が一最新バージョンに脆弱性が含まれていても、気づかずにそのままになってしまう可能性があります。
-対策としては Renovate の [`minimumReleaseAge`](https://docs.renovatebot.com/key-concepts/minimum-release-age/) や Dependabot の [`cooldown`](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown-) を有効にして、ある程度リリースから時間が経っているバージョンに更新するようにする、などの運用が考えられます。
 
 # まとめ
 
