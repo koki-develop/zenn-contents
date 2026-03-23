@@ -211,7 +211,7 @@ Renovate にはオープンソースの脆弱性データベースである [OSV
 
 :::
 
-なので、「常に即日アップデート！！」のような運用をしていると、万が一最新バージョンに脆弱性が含まれていても気づかずに更新してしまう可能性があります。
+なので、「常に即日アップデート！！」のような運用をしていると、万が一最新バージョンに脆弱性が含まれていても、気づかずにそのままになってしまう可能性があります。
 対策としては Renovate の [`minimumReleaseAge`](https://docs.renovatebot.com/key-concepts/minimum-release-age/) や Dependabot の [`cooldown`](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown-) を有効にして、ある程度リリースから時間が経っているバージョンに更新するようにする、などの運用が考えられます。
 
 # まとめ
