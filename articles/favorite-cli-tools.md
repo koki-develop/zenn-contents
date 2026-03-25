@@ -16,11 +16,11 @@ https://zenn.dev/noplan_inc/articles/3a623b2eb6d42d
 僕も貢献したいのでよく使うコマンドラインツールを紹介していきます。
 特定のプログラミング言語等に依存するツールは省いています。
 
-# actionlint - GitHub Actions の Workflow ファイルの静的検査
+# actionlint - GitHub Actions の Workflow ファイルの静的解析
 
 https://github.com/rhysd/actionlint
 
-GitHub Actions の Workflow ファイルの静的検査ツールです。
+GitHub Actions の Workflow ファイルの静的解析ツールです。
 かなり精度が高く、色々な設定ミスを検知してくれます。
 エラーメッセージも見やすくて助かります。
 

@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions を静的検査するツールの紹介 (actionlint/ghalint/zizmor)"
+title: "GitHub Actions 向け静的解析ツールの紹介 (actionlint/ghalint/zizmor)"
 emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions"]
@@ -34,7 +34,7 @@ Git タグ → コミットハッシュへの書き換えは pinact が便利で
 :::
 
 しかし、 GitHub Action ではアクションのコミットハッシュ指定以外にも考慮すべき事項がたくさんあります。
-それらを人力で全てチェックするのには限界があるため、以下のような静的検査ツールを利用して自動化することが重要です。
+それらを人力で全てチェックするのには限界があるため、以下のような静的解析ツールを利用して自動化することが重要です。
 
 - [actionlint - Static checker for GitHub Actions workflow files](#actionlint---static-checker-for-github-actions-workflow-files)
 - [ghalint - GitHub Actions linter](#ghalint---github-actions-linter)
