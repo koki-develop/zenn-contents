@@ -17,6 +17,22 @@ _こういうの_
 
 インストール方法や基本的な使い方について紹介します。
 
+- [インストール](#インストール)
+- [使い方](#使い方)
+  - [明示的に対象ファイルを指定する](#%E6%98%8E%E7%A4%BA%E7%9A%84%E3%81%AB%E5%AF%BE%E8%B1%A1%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
+  - [オンラインモード](#%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%89)
+  - [検出を無視する](#%E6%A4%9C%E5%87%BA%E3%82%92%E7%84%A1%E8%A6%96%E3%81%99%E3%82%8B)
+  - [GitHub Actions で ghasec を使う](#github-actions-%E3%81%A7-ghasec-%E3%82%92%E4%BD%BF%E3%81%86)
+  - [AI エージェントとの連携](#ai-%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%A8%E3%81%AE%E9%80%A3%E6%90%BA)
+- [検出されるルール](#%E6%A4%9C%E5%87%BA%E3%81%95%E3%82%8C%E3%82%8B%E3%83%AB%E3%83%BC%E3%83%AB)
+  - [リモートアクションのコミット SHA 固定](#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88-sha-%E5%9B%BA%E5%AE%9A)
+  - [スクリプトインジェクション](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%82%A4%E3%83%B3%E3%82%B8%E3%82%A7%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3)
+  - [なりすましコミット (Impostor Commit)](#%E3%81%AA%E3%82%8A%E3%81%99%E3%81%BE%E3%81%97%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88-(impostor-commit))
+- [技術的な話](#%E6%8A%80%E8%A1%93%E7%9A%84%E3%81%AA%E8%A9%B1)
+  - [検出の仕組み](#%E6%A4%9C%E5%87%BA%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF)
+  - [検出結果の表示](#%E6%A4%9C%E5%87%BA%E7%B5%90%E6%9E%9C%E3%81%AE%E8%A1%A8%E7%A4%BA)
+- [まとめ](#%E3%81%BE%E3%81%A8%E3%82%81)
+
 # インストール
 
 Homebrew でインストールできます。
@@ -45,7 +61,9 @@ $ docker run --rm -v "$(pwd):/mnt" ghcr.io/koki-develop/ghasec:latest
 $ ghasec
 ```
 
-```bash:出力例
+:::details 出力例
+
+```bash
 --> .github/workflows/example.yml:1:1
 1 | on: pull_request
   | ^ "permissions: {}" must be set (default-permissions)
@@ -86,6 +104,8 @@ $ ghasec
 ⚠ 2 online rules skipped; use --online to enable them
 ```
 
+:::
+
 ## 明示的に対象ファイルを指定する
 
 ghasec は、デフォルトでは以下のファイルを対象に検出を行います。
@@ -97,6 +117,8 @@ ghasec は、デフォルトでは以下のファイルを対象に検出を行�
 
 ```bash
 $ ghasec example.yml
+
+# 複数指定も可
 $ ghasec example.yml example2.yml
 ```
 
@@ -104,13 +126,13 @@ $ ghasec example.yml example2.yml
 
 一部のルールは内部的に GitHub API を利用しますが、これらのルールはデフォルトでは無効になっています。
 
-`--online` フラグを指定することで、それらのルールも有効になります。
+`--online` フラグを指定すると、それらのルールも有効になります。
 
 ```bash
 $ ghasec --online
 ```
 
-GitHub API を利用する際に使用するトークンは、環境変数 `GITHUB_TOKEN` で設定できます。
+GitHub API を利用する際に使用するトークンは、`GITHUB_TOKEN` 環境変数で設定できます。
 レート制限などを回避したい場合などに使えます。
 
 ```bash
@@ -119,7 +141,7 @@ $ GITHUB_TOKEN="ghp_..." ghasec --online
 
 ## 検出を無視する
 
-ワークフロー定義内に `ghasec-ignore` コメントを書くことで、該当箇所の検出を無視できます。
+`ghasec-ignore` コメントを書くことで該当箇所の検出を無視できます。
 
 ```yml
 # 全てのルールを無視する
@@ -169,9 +191,11 @@ $ ghasec --format=markdown
 ```
 
 検出箇所とその内容について、Markdown 形式で出力されます。
-いちいち検出内容を手動で修正するのは面倒なので、これをそのまま AI エージェントに丸投げしておけば、大抵はよしなにやってくれると思います。
+いちいち検出内容を手動で修正するのは面倒なので、この出力をそのまま AI エージェントに丸投げしておけば、大抵はよしなにやってくれると思います。
 
-~~~markdown:出力例
+:::details 出力例
+
+~~~markdown
 ## .github/workflows/example.yml:1:1
 
 ```yaml
@@ -227,10 +251,12 @@ on: pull_request
 > **Note**: 2 online rules skipped. Use `--online` to enable them.
 ~~~
 
-# 主なルール
+:::
+
+# 検出されるルール
 
 ghasec が検出するルールのうちの一部を紹介します。
-全ての一覧については [ghasec/rules/README.md](https://github.com/koki-develop/ghasec/blob/main/rules/README.md) をご参照ください。
+完全なリストについては [ghasec/rules/README.md](https://github.com/koki-develop/ghasec/blob/main/rules/README.md) をご参照ください。
 
 ## リモートアクションのコミット SHA 固定
 
@@ -250,7 +276,7 @@ https://github.com/koki-develop/ghasec/blob/main/rules/unpinned-action/README.md
   Ref: https://github.com/koki-develop/ghasec/blob/main/rules/unpinned-action/README.md
 ```
 
-なぜコミット SHA 固定するべきなのかについては、以下の記事をご参照ください。
+なぜリモートアクションをコミット SHA で固定するべきなのかについては、以下の記事をご参照ください。
 
 https://zenn.dev/kou_pg_0131/articles/gha-should-be-pinned
 
@@ -330,9 +356,11 @@ https://github.com/goccy/go-yaml
 
 ## 検出結果の表示
 
+ghasec の出力は我ながら結構いい感じです。YAML のシンタックスハイライトも効いています。
+
 ![screenshot](/images/ghasec-introduction/screenshot.png)
 
-検出結果のファイルコンテンツおよびエラーメッセージの表示については [koki-develop/annotate-go](https://github.com/koki-develop/annotate-go) を使っています。ghasec のためだけに作りました。
+ファイルコンテンツおよびエラーメッセージの表示については [koki-develop/annotate-go](https://github.com/koki-develop/annotate-go) を使っています。ghasec のためだけに作りました。
 
 https://github.com/koki-develop/annotate-go
 
@@ -376,6 +404,6 @@ https://pkg.go.dev/github.com/koki-develop/annotate-go
 
 # まとめ
 
-たとえ静的解析ツールがあっても使わないと意味がないんですけどね！！！！
+まぁたとえ静的解析ツールがあっても使わないと意味がないんですけどね！！！！
 
 https://sizu.me/koki_develop/posts/bee4minfae45
