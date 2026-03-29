@@ -260,7 +260,6 @@ on: pull_request
 # 検出されるルール
 
 ghasec が検出するルールのうちの一部を紹介します。
-完全なリストについては [ghasec/rules/README.md](https://github.com/koki-develop/ghasec/blob/main/rules/README.md) をご参照ください。
 
 ## リモートアクションのコミット SHA 固定
 
@@ -349,6 +348,13 @@ https://www.chainguard.dev/unchained/what-the-fork-imposter-commits-in-github-ac
 - [2026年3月19日の Trivy 再侵害の概要と対応指針 – やっていく気持ち](https://diary.shift-js.info/trivy-compromise/)
 
 :::
+
+---
+
+その他の ghasec でサポートされているルールの一覧については [ghasec/rules/README.md](https://github.com/koki-develop/ghasec/blob/main/rules/README.md) をご参照ください。
+最新の v0.8.0 時点では 19 個のルールをサポートしています。
+
+https://github.com/koki-develop/ghasec/blob/main/rules/README.md#
 
 # 技術的な話
 
