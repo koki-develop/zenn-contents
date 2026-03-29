@@ -412,6 +412,8 @@ https://pkg.go.dev/github.com/koki-develop/annotate-go
 ![Standards](https://imgs.xkcd.com/comics/standards.png)
 _[Standards](https://xkcd.com/927/)_
 
+まぁ静的解析ツールなんてなんぼあってもいいですからね。
+
 # まとめ
 
 まぁたとえ静的解析ツールがあっても使わないと意味がないんですけどね！！！！
