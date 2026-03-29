@@ -31,6 +31,7 @@ _こういうの_
 - [技術的な話](#%E6%8A%80%E8%A1%93%E7%9A%84%E3%81%AA%E8%A9%B1)
   - [検出の仕組み](#%E6%A4%9C%E5%87%BA%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF)
   - [検出結果の表示](#%E6%A4%9C%E5%87%BA%E7%B5%90%E6%9E%9C%E3%81%AE%E8%A1%A8%E7%A4%BA)
+- [開発動機](#%E9%96%8B%E7%99%BA%E5%8B%95%E6%A9%9F)
 - [まとめ](#%E3%81%BE%E3%81%A8%E3%82%81)
 
 # インストール
@@ -407,7 +408,7 @@ https://pkg.go.dev/github.com/koki-develop/annotate-go
 
 # 開発動機
 
-今までは [actionlint](https://github.com/rhysd/actionlint) と [zizmor](https://docs.zizmor.sh) と [ghalint](https://github.com/suzuki-shunsuke/ghalint) を併用してた (全部カバー範囲が微妙に違う) んですけど、さすがに毎回全部実行するのが面倒になってしまったので、それぞれのツールの好きなところを全部盛り込んだツールを自分で作ることにしました。
+今までは [actionlint](https://github.com/rhysd/actionlint) と [zizmor](https://docs.zizmor.sh) と [ghalint](https://github.com/suzuki-shunsuke/ghalint) を併用してた (カバーしてる範囲がそれぞれ微妙に違う) んですけど、さすがに毎回全部実行するのが面倒になってしまったので、それぞれのツールの好きなところを全部盛り込んだツールを自分で作ることにしました。
 
 ![Standards](https://imgs.xkcd.com/comics/standards.png)
 _[Standards](https://xkcd.com/927/)_
