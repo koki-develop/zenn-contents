@@ -132,10 +132,13 @@ $ ghasec example.yml example2.yml
 $ ghasec --online
 ```
 
-GitHub API を利用する際に使用するトークンは、`GITHUB_TOKEN` 環境変数で設定できます。
+GitHub API を利用する際に使用するトークンは、`GGHASEC_GITHUB_TOKEN` 環境変数か `GITHUB_TOKEN` 環境変数で設定できます。
 レート制限などを回避したい場合などに使えます。
 
 ```bash
+$ GHASEC_GITHUB_TOKEN="ghp_..." ghasec --online
+
+# これでも同じ
 $ GITHUB_TOKEN="ghp_..." ghasec --online
 ```
 
