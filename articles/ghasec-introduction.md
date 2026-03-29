@@ -405,6 +405,13 @@ age = 30
 
 https://pkg.go.dev/github.com/koki-develop/annotate-go
 
+# 開発動機
+
+今までは [actionlint](https://github.com/rhysd/actionlint) と [zizmor](https://docs.zizmor.sh) と [ghalint](https://github.com/suzuki-shunsuke/ghalint) を併用してた (全部カバー範囲が微妙に違う) んですけど、さすがに毎回全部実行するのが面倒になってしまったので、それぞれのツールの好きなところを全部盛り込んだツールを自分で作ることにしました。
+
+![Standards](https://imgs.xkcd.com/comics/standards.png)
+_[Standards](https://xkcd.com/927/)_
+
 # まとめ
 
 まぁたとえ静的解析ツールがあっても使わないと意味がないんですけどね！！！！
