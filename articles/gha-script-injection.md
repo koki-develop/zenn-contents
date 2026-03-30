@@ -262,9 +262,22 @@ _GitHub Actions の実行ログ_
 
 ## 自動検出するために
 
-actionlint や zizmor などのツールを使ってください。今回紹介した問題のあるワークフローは、全てこれらのツールで検出できます。
+ghasec や actionlint や zizmor などのツールを使ってください。今回紹介した問題のあるワークフローは、全てこれらのツールで検出できます。
 
+https://zenn.dev/kou_pg_0131/articles/ghasec-introduction
 https://zenn.dev/kou_pg_0131/articles/gha-static-checker
+
+```bash:ghasec の出力例
+--> ./example.yml:8:32
+...
+4 | jobs:
+5 |   example:
+...
+7 |     steps:
+8 |       - run: echo "PR title is ${{ github.event.pull_request.title }}"
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ "run" must not contain expressions; use environment variables instead (script-injection)
+  Ref: https://github.com/koki-develop/ghasec/blob/main/rules/script-injection/README.md
+```
 
 ```bash:actionlint の出力例
 .github/workflows/title.yml:8:36: "github.event.pull_request.title" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details [expression]
