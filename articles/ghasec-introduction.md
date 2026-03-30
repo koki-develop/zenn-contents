@@ -352,7 +352,7 @@ https://www.chainguard.dev/unchained/what-the-fork-imposter-commits-in-github-ac
 ---
 
 その他の ghasec でサポートされているルールの一覧については [ghasec/rules/README.md](https://github.com/koki-develop/ghasec/blob/main/rules/README.md) をご参照ください。
-最新の v0.9.0 時点では 20 個のルールをサポートしています。
+最新の v0.10.0 時点では 20 個のルールをサポートしています。
 
 https://github.com/koki-develop/ghasec/blob/main/rules/README.md#
 
