@@ -7,8 +7,7 @@ published: true
 published_at: 2026-03-30 18:00
 ---
 
-世の中、あまりにも GitHub Actions のセキュリティを軽視しすぎ (とは言わないまでも、関心が薄すぎ) では？と思う、今日この頃です。
-というわけで、勢いのままに GitHub Actions のセキュリティに特化した静的解析ツール「ghasec」を作りました。
+GitHub Actions のセキュリティに特化した静的解析ツール「ghasec」を作りました。
 
 https://github.com/koki-develop/ghasec
 
