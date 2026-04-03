@@ -7,6 +7,13 @@ published: true
 published_at: 2025-03-24 18:00
 ---
 
+(2026-04-03 追記)
+こういうのも作りました。
+
+https://zenn.dev/kou_pg_0131/articles/ghasec-introduction
+
+---
+
 先日、 tj-actions/changed-files や reviewdog/action-* などのアクションの Git タグが書き換えられるという出来事がありました。
 これにより、これらのアクションを Git タグで参照している GitHub Actions Workflow 内で悪意のあるコードが実行されてしまうという事態が発生しました。
 
