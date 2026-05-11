@@ -11,12 +11,7 @@ published_at: 2026-05-11 18:00
 テキストデータから個人情報を検出・マスキングすることができる、ローカルで動作するモデルらしいです。
 
 https://openai.com/ja-JP/index/introducing-openai-privacy-filter/
-https://github.com/openai/privacy-filter
 https://huggingface.co/openai/privacy-filter
-
-検出可能なカテゴリについては以下をご参照ください。
-
-- [Output Shape](https://github.com/openai/privacy-filter#output-shape)
 
 ---
 
@@ -29,7 +24,9 @@ https://huggingface.co/openai/privacy-filter
 
 ## OpenAI Privacy Filter の使い方 (CLI)
 
-OpenAI Privacy Filter を使用するための CLI が公開されているので、今回はそちらを使ってみます。
+OpenAI Privacy Filter を使用するための公式 CLI が公開されているので、今回はこちらを使ってみます。
+
+https://github.com/openai/privacy-filter
 
 ### インストール
 
