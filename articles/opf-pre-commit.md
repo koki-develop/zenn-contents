@@ -17,11 +17,6 @@ https://huggingface.co/openai/privacy-filter
 
 というわけで、pre-commit フックに入れたら面白そうなので試してみました。
 
-## 検証環境
-
-- マシン: MacBook Air (M5, メモリ 32GB)
-- OpenAI Privacy Filter: コミット [`f7f00ca7fb869683eb732c010299d901457f19c3`](https://github.com/openai/privacy-filter/commit/f7f00ca7fb869683eb732c010299d901457f19c3)
-
 ## OpenAI Privacy Filter の使い方 (CLI)
 
 OpenAI Privacy Filter を使用するための公式 CLI が公開されているので、今回はこちらを使ってみます。
