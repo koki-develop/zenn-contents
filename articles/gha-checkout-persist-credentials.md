@@ -98,7 +98,7 @@ _実行ログ_
 
 https://cli.github.com/manual/gh_auth_setup-git
 
-`gh auth setup-git` コマンドは Git の認証情報に GitHub CLI の認証情報を使用するように設定してくれるコマンドです。これを実行すると `~/.gitconfig` に以下のような設定が追加され、Git の認証情報として GitHub CLI の認証情報を使用するようになります。
+`gh auth setup-git` コマンドは Git の認証情報に GitHub CLI の認証情報を使用するように設定してくれるコマンドです。これを実行すると `~/.gitconfig` に以下のような設定が追加されます。
 
 ```ini:~/.gitconfig
 [credential "https://github.com"]
@@ -109,7 +109,7 @@ https://cli.github.com/manual/gh_auth_setup-git
 	helper = !/usr/bin/gh auth git-credential
 ```
 
-これを使えば、**Git の認証情報を保存することなく**、**必要なタイミングのみで** GitHub トークンを参照することができるようになります。
+これにより、**Git の認証情報をファイルに保存することなく**、**必要なタイミングのみで** GitHub トークンを参照することができるようになります。
 
 実際の使用イメージはこんな感じになります。
 
