@@ -70,7 +70,7 @@ _実行ログ_
 
 `<Base64エンコード文字列>` の部分は **`x-access-token:<GitHubトークン>` を Base64 エンコードしただけの文字列**です。なので、この部分をデコードすれば**簡単に GitHub トークンを抜き取ることができます**。( 冒頭の例を参照 )
 
-`actions/checkout` に `persist-credentials: false` を設定しておけば、このファイルはチェックアウト完了後に**削除されます**。よって、少なくとも後続ステップからこのファイル経由で GitHub トークンが抜き取られる心配はなくなります。
+`actions/checkout` に `persist-credentials: false` を設定しておけば、チェックアウト完了後にこのファイルは**削除されます**。よって、少なくとも後続ステップからこのファイル経由で GitHub トークンが抜き取られる心配はなくなります。
 
 ## Git の認証が必要な場合はどうしたらいいの？
 
@@ -94,7 +94,7 @@ jobs:
 ![](/images/gha-checkout-persist-credentials/git-pull-failed.png)
 _実行ログ_
 
-解決方法はいろいろ考えられますが、一番シンプルなのは `gh auth setup-git` コマンドを使う方法です。
+解決方法はいろいろ考えられますが、シンプルなのは `gh auth setup-git` コマンドを使う方法です。
 
 https://cli.github.com/manual/gh_auth_setup-git
 
