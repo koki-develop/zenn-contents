@@ -187,6 +187,6 @@ https://zenn.dev/kou_pg_0131/articles/gha-static-checker
 
 ## まとめ
 
-要するに難しいこと考えずに静的解析ツール使って従っとけばいいだけです。GitHub Actions にもちゃんと静的解析ツール使ってください。
+要するに、静的解析ツールを使ってください。
 
 https://sizu.me/koki_develop/posts/bee4minfae45
