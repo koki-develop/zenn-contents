@@ -127,7 +127,7 @@ jobs:
       # credential helper をセットアップ
       - run: gh auth setup-git
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_HOST: github.com
 
       # Git の認証情報が必要なときだけ GH_TOKEN を渡す
       - run: git pull origin main
