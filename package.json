@@ -8,7 +8,7 @@
     "check:unused-images": "bun run ./tasks/check-unused-images.ts"
   },
   "dependencies": {
-    "zenn-cli": "0.4.5"
+    "zenn-cli": "0.5.2"
   },
   "devDependencies": {
     "@types/bun": "1.2.12",
