@@ -11,7 +11,7 @@
     "zenn-cli": "0.5.2"
   },
   "devDependencies": {
-    "@types/bun": "1.2.12",
+    "@types/bun": "1.4.0",
     "concurrently": "9.1.2",
     "textlint": "14.7.1",
     "textlint-filter-rule-allowlist": "4.0.0",
