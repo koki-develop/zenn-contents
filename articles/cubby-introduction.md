@@ -103,6 +103,10 @@ $ cubby set my-secret --force
 
 認証に成功すると保存が完了します。
 
+```:出力例
+Saved "my-secret"
+```
+
 ### シークレットを一覧する
 
 `cubby list` で保存しているシークレットの名前を一覧できます。
