@@ -3,7 +3,8 @@ title: "Touch ID 付きでローカルにシークレットを保管できるコ
 emoji: "🫆"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["mac", "swift", "cli", "security"]
-published: false
+published: true
+published_at: 2026-09-14 18:00
 ---
 
 Touch ID 付きでローカルにシークレットを保管できるコマンドラインツール「cubby」を作りました。mac 専用です。
