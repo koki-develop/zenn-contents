@@ -65,7 +65,7 @@ SUBCOMMANDS:
 
 ### ストアを作成する
 
-まずは `cubby init` でストアを作成します。
+まずは `cubby init` でシークレットを保存するためのストアを作成します。
 
 ```bash
 $ cubby init
@@ -98,7 +98,7 @@ $ echo -n 'P@ssw0rd' | cubby set my-secret --from-stdin
 $ cubby set my-secret --force
 ```
 
-値を入力して Enter を押すと Touch ID を求められます。
+実行すると Touch ID を求められます。
 
 ![](/images/cubby-introduction/set.png)
 
