@@ -167,9 +167,9 @@ https://support.apple.com/ja-jp/guide/security/sec59b0b31ff/web
 
 ```
 $CUBBY_HOME/
-├── key.blob             Secure Enclave の鍵 (ラップ済み)
+├── key.blob      Secure Enclave の鍵 (ラップ済み)
 └── secrets/
-    └── <hex>.bin        暗号化されたシークレット (1 つにつき 1 ファイル)
+    └── <hex>.bin 暗号化されたシークレット (1 つにつき 1 ファイル)
 ```
 
 シークレットの復号に必要な秘密鍵は Secure Enclave の外に出ることはありません。
