@@ -165,11 +165,11 @@ https://support.apple.com/ja-jp/guide/security/sec59b0b31ff/web
 シークレットはこの鍵で 1 つずつ暗号化されて `$CUBBY_HOME/secrets/` に保存され、取得するときも同じ鍵で復号します。
 そのため、保存時と取得時に毎回 Touch ID が求められます。
 
-```
+```sh
 $CUBBY_HOME/
-├── key.blob      Secure Enclave の鍵 (ラップ済み)
+├── key.blob # Secure Enclave の鍵 (ラップ済み)
 └── secrets/
-    └── <hex>.bin 暗号化されたシークレット (1 つにつき 1 ファイル)
+    └── <hex>.bin # 暗号化されたシークレット (1 つにつき 1 ファイル)
 ```
 
 シークレットの復号に必要な秘密鍵は Secure Enclave の外に出ることはありません。
